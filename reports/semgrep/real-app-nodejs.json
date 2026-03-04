@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "Semgrep CE"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-79",
+      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "line": 24,
+      "severity": "High",
+      "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-79",
+      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "line": 48,
+      "severity": "High",
+      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-79",
+      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "line": 49,
+      "severity": "High",
+      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-79",
+      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "line": 53,
+      "severity": "High",
+      "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-798",
+      "file": "apps/real-app-nodejs/src/routes/users.js",
+      "line": 24,
+      "severity": "High",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
+      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-798",
+      "file": "apps/real-app-nodejs/src/routes/users.js",
+      "line": 59,
+      "severity": "High",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
+      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "confidence": "HIGH"
+    }
+  ]
+}

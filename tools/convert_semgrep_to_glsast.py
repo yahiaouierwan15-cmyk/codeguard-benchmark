@@ -28,10 +28,16 @@ CWE_MAP = {
 
 
 def extract_cwe(metadata: dict) -> str:
-    cwe = metadata.get("cwe", "CWE-unknown")
+    """Extract and normalize CWE to 'CWE-NNN' format."""
+    import re
+    cwe = metadata.get("cwe", "")
     if isinstance(cwe, list):
-        cwe = cwe[0] if cwe else "CWE-unknown"
-    return cwe
+        cwe = cwe[0] if cwe else ""
+    if not cwe:
+        return "CWE-unknown"
+    # Normalize: extract just 'CWE-NNN' from longer strings
+    m = re.search(r"(CWE-\d+)", str(cwe), re.IGNORECASE)
+    return m.group(1).upper() if m else str(cwe).split(":")[0].strip()
 
 
 def convert(semgrep_json: dict, app_root: str, scanner_name: str = "Semgrep CE") -> dict:

@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "Semgrep CE"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 27,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Detected user input entering a `subprocess` call unsafely. This could result in a command injection vulnerability. An attacker could use this vulnerability to execute arbitrary commands on the host, which allows them to download malware, scan sensitive data, or run any command they wish on the serve",
+      "rule_id": "python.flask.security.injection.subprocess-injection.subprocess-injection",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Detected subprocess function 'check_output' with user controlled data. A malicious actor could leverage this to perform command injection. You may consider using 'shlex.escape()'.",
+      "rule_id": "python.lang.security.dangerous-subprocess-use.dangerous-subprocess-use",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Found 'subprocess' function 'check_output' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which makes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.",
+      "rule_id": "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-918",
+      "file": "apps/flask-app/app.py",
+      "line": 44,
+      "severity": "Critical",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
+      "rule_id": "python.django.security.injection.ssrf.ssrf-injection-requests.ssrf-injection-requests",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-918",
+      "file": "apps/flask-app/app.py",
+      "line": 46,
+      "severity": "Critical",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
+      "rule_id": "python.flask.security.injection.ssrf-requests.ssrf-requests",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-7",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 67,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-8",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 82,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-9",
+      "cwe": "CWE-489",
+      "file": "apps/flask-app/app.py",
+      "line": 88,
+      "severity": "High",
+      "message": "Detected Flask app with debug=True. Do not deploy to production with this flag enabled as it will leak sensitive information. Instead, consider using Flask configuration variables or setting 'debug' using system environment variables.",
+      "rule_id": "python.flask.security.audit.debug-enabled.debug-enabled",
+      "confidence": "HIGH"
+    }
+  ]
+}

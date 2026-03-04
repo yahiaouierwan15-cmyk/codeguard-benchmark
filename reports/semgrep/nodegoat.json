@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "Semgrep CE"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-95",
+      "file": "apps/nodegoat/app/routes/contributions.js",
+      "line": 32,
+      "severity": "Critical",
+      "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+      "rule_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-95",
+      "file": "apps/nodegoat/app/routes/contributions.js",
+      "line": 33,
+      "severity": "Critical",
+      "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+      "rule_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-95",
+      "file": "apps/nodegoat/app/routes/contributions.js",
+      "line": 34,
+      "severity": "Critical",
+      "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+      "rule_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-601",
+      "file": "apps/nodegoat/app/routes/index.js",
+      "line": 72,
+      "severity": "High",
+      "message": "The application redirects to a URL specified by user-supplied input `req` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.",
+      "rule_id": "javascript.express.security.audit.express-open-redirect.express-open-redirect",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Don\u2019t use the default session cookie name Using the default session cookie name can open your app to attacks. The security issue posed is similar to X-Powered-By: a potential attacker can use it to fingerprint the server and target attacks accordingly.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Default session middleware settings: `domain` not set. It indicates the domain of the cookie; use it to compare against the domain of the server in which the URL is being requested. If they match, then check the path attribute next.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-7",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Default session middleware settings: `expires` not set. Use it to set expiration date for persistent cookies.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-8",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Default session middleware settings: `httpOnly` not set. It ensures the cookie is sent only over HTTP(S), not client JavaScript, helping to protect against cross-site scripting attacks.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-9",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Default session middleware settings: `path` not set. It indicates the path of the cookie; use it to compare against the request path. If this and domain match, then send the cookie in the request.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-10",
+      "cwe": "CWE-522",
+      "file": "apps/nodegoat/server.js",
+      "line": 78,
+      "severity": "High",
+      "message": "Default session middleware settings: `secure` not set. It ensures the browser only sends the cookie over HTTPS.",
+      "rule_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

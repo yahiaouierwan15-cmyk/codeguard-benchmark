@@ -1,0 +1,8 @@
+app,language,gt_total,findings_total,tp,fp,fn,precision,recall,f1
+webgoat,java,10,1336,10,1326,0,0.0075,1.0,0.0149
+nodegoat,javascript,6,141,2,139,4,0.0142,0.3333,0.0272
+dvwa,php,5,76,2,74,3,0.0263,0.4,0.0494
+flask-app,python,7,22,6,16,1,0.2727,0.8571,0.4138
+real-app-nodejs,javascript,6,15,2,13,4,0.1333,0.3333,0.1905
+real-app-python,python,6,25,4,21,2,0.16,0.6667,0.2581
+real-app-php,php,5,6,2,4,3,0.3333,0.4,0.3636

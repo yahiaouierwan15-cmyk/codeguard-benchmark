@@ -78,31 +78,46 @@ def normalize_path(path: str) -> str:
     return path.lstrip("/").lower()
 
 
+def normalize_cwe(cwe: str) -> str:
+    """
+    Normalize a CWE identifier to 'CWE-NNN' format.
+    Handles 'CWE-89', 'CWE-89: SQL Injection', 'cwe-89', etc.
+    """
+    if not cwe:
+        return ""
+    import re
+    m = re.search(r"(CWE-\d+)", cwe, re.IGNORECASE)
+    return m.group(1).upper() if m else cwe.upper().split(":")[0].strip()
+
+
 def finding_matches_gt(finding: dict, gt_entry: dict, line_tolerance: int) -> bool:
     """
     Return True if a finding matches a ground-truth entry using 3 criteria:
       1. File path match (suffix / endswith check)
-      2. CWE match
-      3. Line number within ±line_tolerance of gt line_start
+      2. CWE match (normalized — 'CWE-89: ...' == 'CWE-89')
+      3. Line number within ±line_tolerance of [gt.line_start, gt.line_end]
     """
     gt_file = normalize_path(gt_entry.get("file", ""))
     f_file = normalize_path(finding.get("file", ""))
 
-    # File: one must be a suffix of the other (handles relative vs absolute)
+    # File: one must be a suffix of the other (handles relative vs absolute paths,
+    # e.g. 'apps/flask-app/app.py' matches gt 'app.py')
     if not (f_file.endswith(gt_file) or gt_file.endswith(f_file)):
         return False
 
-    # CWE
-    gt_cwe = gt_entry.get("cwe", "")
-    f_cwe = finding.get("cwe", "")
-    if gt_cwe and f_cwe and gt_cwe.upper() != f_cwe.upper():
+    # CWE — normalize both sides before comparing
+    gt_cwe = normalize_cwe(gt_entry.get("cwe", ""))
+    f_cwe = normalize_cwe(finding.get("cwe", ""))
+    if gt_cwe and f_cwe and gt_cwe != f_cwe:
         return False
 
-    # Line number
-    gt_line = gt_entry.get("line_start", 0)
+    # Line number — accept if within tolerance of the GT range [line_start, line_end]
+    gt_start = gt_entry.get("line_start", 0)
+    gt_end = gt_entry.get("line_end", gt_start)
     f_line = finding.get("line", 0)
-    if gt_line and f_line:
-        if abs(f_line - gt_line) > line_tolerance:
+    if gt_start and f_line:
+        in_range = (gt_start - line_tolerance) <= f_line <= (gt_end + line_tolerance)
+        if not in_range:
             return False
 
     return True

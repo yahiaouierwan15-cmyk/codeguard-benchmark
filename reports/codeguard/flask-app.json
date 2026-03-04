@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "CodeGuard"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 12,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 12,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables or a secrets manager instead.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-python",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 12,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 13,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 13,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables or a secrets manager instead.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-python",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 13,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-7",
+      "cwe": "CWE-89",
+      "file": "apps/flask-app/app.py",
+      "line": 27,
+      "severity": "Critical",
+      "message": "SQL query built via string concatenation then passed to execute() \u2014 SQL injection risk. Use parameterized queries with placeholder values.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.sql-variable-concat-python",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-8",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 27,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-9",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "High",
+      "message": "subprocess called with shell=True \u2014 if the command string includes user input, this allows OS command injection. Use shell=False with a list of arguments, or validate/escape input with shlex.quote().\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.subprocess-shell-user-input",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-10",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Detected user input entering a `subprocess` call unsafely. This could result in a command injection vulnerability. An attacker could use this vulnerability to execute arbitrary commands on the host, which allows them to download malware, scan sensitive data, or run any command they wish on the serve",
+      "rule_id": "python.flask.security.injection.subprocess-injection.subprocess-injection",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-11",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Detected subprocess function 'check_output' with user controlled data. A malicious actor could leverage this to perform command injection. You may consider using 'shlex.escape()'.",
+      "rule_id": "python.lang.security.dangerous-subprocess-use.dangerous-subprocess-use",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-12",
+      "cwe": "CWE-78",
+      "file": "apps/flask-app/app.py",
+      "line": 38,
+      "severity": "Critical",
+      "message": "Found 'subprocess' function 'check_output' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which makes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.",
+      "rule_id": "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-13",
+      "cwe": "CWE-918",
+      "file": "apps/flask-app/app.py",
+      "line": 44,
+      "severity": "Critical",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
+      "rule_id": "python.django.security.injection.ssrf.ssrf-injection-requests.ssrf-injection-requests",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-14",
+      "cwe": "CWE-918",
+      "file": "apps/flask-app/app.py",
+      "line": 46,
+      "severity": "Critical",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
+      "rule_id": "python.flask.security.injection.ssrf-requests.ssrf-requests",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-15",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 54,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-16",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 54,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables or a secrets manager instead.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-python",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-17",
+      "cwe": "CWE-798",
+      "file": "apps/flask-app/app.py",
+      "line": 54,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-18",
+      "cwe": "CWE-89",
+      "file": "apps/flask-app/app.py",
+      "line": 67,
+      "severity": "Critical",
+      "message": "SQL query built via string concatenation then passed to execute() \u2014 SQL injection risk. Use parameterized queries with placeholder values.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.sql-variable-concat-python",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-19",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 67,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-20",
+      "cwe": "CWE-89",
+      "file": "apps/flask-app/app.py",
+      "line": 82,
+      "severity": "Critical",
+      "message": "SQL query built with string formatting \u2014 SQL injection risk. Use parameterized queries: cursor.execute(\"SELECT * FROM t WHERE id = %s\", (user_id,))\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.sql-string-formatting",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-21",
+      "cwe": "CWE-704",
+      "file": "apps/flask-app/app.py",
+      "line": 82,
+      "severity": "Critical",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
+      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-22",
+      "cwe": "CWE-489",
+      "file": "apps/flask-app/app.py",
+      "line": 88,
+      "severity": "High",
+      "message": "Detected Flask app with debug=True. Do not deploy to production with this flag enabled as it will leak sensitive information. Instead, consider using Flask configuration variables or setting 'debug' using system environment variables.",
+      "rule_id": "python.flask.security.audit.debug-enabled.debug-enabled",
+      "confidence": "HIGH"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "Semgrep CE"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java",
+      "line": 45,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "java.spring.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java",
+      "line": 50,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-501",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java",
+      "line": 39,
+      "severity": "High",
+      "message": "Detected input from a HTTPServletRequest going into a session command, like `setAttribute`. User input into such a command could lead to an attacker inputting malicious code into your session parameters, blurring the line between what's trusted and untrusted, and therefore leading to a trust boundar",
+      "rule_id": "java.lang.security.audit.tainted-session-from-http-request.tainted-session-from-http-request",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-328",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "line": 39,
+      "severity": "High",
+      "message": "Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use HMAC instead.",
+      "rule_id": "java.lang.security.audit.crypto.use-of-md5.use-of-md5",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-918",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderJKUEndpoint.java",
+      "line": 57,
+      "severity": "Critical",
+      "message": "User data flows into the host portion of this manually-constructed URL. This could allow an attacker to send data to their own server, potentially exposing sensitive data such as cookies or authorization information sent with this request. They could also probe internal servers or other resources th",
+      "rule_id": "java.spring.security.injection.tainted-url-host.tainted-url-host",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-601",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/openredirect/OpenRedirectRealRedirect.java",
+      "line": 18,
+      "severity": "High",
+      "message": "Application redirects a user to a destination URL specified by a user supplied parameter that is not validated.",
+      "rule_id": "java.spring.security.audit.spring-unvalidated-redirect.spring-unvalidated-redirect",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-7",
+      "cwe": "CWE-22",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadRetrieval.java",
+      "line": 100,
+      "severity": "Critical",
+      "message": "Detected a potential path traversal. A malicious actor could control the location of this file, to include going backwards in the directory with '../'. To address this, ensure that user-controlled variables in file paths are sanitized. You may also consider using a utility method such as org.apache.",
+      "rule_id": "java.lang.security.httpservlet-path-traversal.httpservlet-path-traversal",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-8",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+      "line": 55,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "java.spring.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-9",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+      "line": 57,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-10",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java",
+      "line": 56,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-11",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5a.java",
+      "line": 52,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-12",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java",
+      "line": 69,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-13",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "line": 62,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-14",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "line": 142,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-15",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java",
+      "line": 65,
+      "severity": "Critical",
+      "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+      "rule_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-16",
+      "cwe": "CWE-89",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java",
+      "line": 51,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "java.spring.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-17",
+      "cwe": "CWE-23",
+      "file": "apps/webgoat/src/main/java/org/owasp/webgoat/webwolf/FileServer.java",
+      "line": 79,
+      "severity": "Critical",
+      "message": "Detected user input controlling a file path. An attacker could control the location of this file, to include going backwards in the directory with '../'. To address this, ensure that user-controlled variables in file paths are sanitized. You may also consider using a utility method such as org.apach",
+      "rule_id": "java.spring.security.injection.tainted-file-path.tainted-file-path",
+      "confidence": "HIGH"
+    }
+  ]
+}

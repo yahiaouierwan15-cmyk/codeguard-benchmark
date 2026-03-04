@@ -1,0 +1,768 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "CodeGuard"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/instructions.php",
+      "line": 26,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-200",
+      "file": "apps/dvwa/phpinfo.php",
+      "line": 8,
+      "severity": "Critical",
+      "message": "The 'phpinfo' function may reveal sensitive information about your environment.",
+      "rule_id": "php.lang.security.phpinfo-use.phpinfo-use",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/api/src/HealthController.php",
+      "line": 88,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 3,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-7",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 5,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-8",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 5,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-9",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/authbypass/authbypass.js",
+      "line": 5,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-10",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/low.php",
+      "line": 22,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-11",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/low.php",
+      "line": 35,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-12",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/low.php",
+      "line": 79,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-13",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/medium.php",
+      "line": 21,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-14",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/medium.php",
+      "line": 28,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-15",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/bac/source/medium.php",
+      "line": 71,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-16",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/brute/source/low.php",
+      "line": 12,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-17",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/high.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-18",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/high.js",
+      "line": 3,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-19",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/high.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-20",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/impossible.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-21",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/impossible.js",
+      "line": 3,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-22",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/csp/source/impossible.js",
+      "line": 3,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-23",
+      "cwe": "CWE-79",
+      "file": "apps/dvwa/vulnerabilities/csp/source/jsonp.php",
+      "line": 12,
+      "severity": "Critical",
+      "message": "`Echo`ing user input risks cross-site scripting vulnerability. You should use `htmlentities()` when showing data to users.",
+      "rule_id": "php.lang.security.injection.echoed-request.echoed-request",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-24",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/high.php",
+      "line": 26,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-25",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/high.php",
+      "line": 26,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-26",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/high.php",
+      "line": 30,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-27",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/high.php",
+      "line": 30,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-28",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/impossible.php",
+      "line": 22,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-29",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/impossible.php",
+      "line": 22,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-30",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/impossible.php",
+      "line": 26,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-31",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/impossible.php",
+      "line": 26,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-32",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/low.php",
+      "line": 10,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-33",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/low.php",
+      "line": 10,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-34",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/low.php",
+      "line": 14,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-35",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/low.php",
+      "line": 14,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-36",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/medium.php",
+      "line": 19,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-37",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/medium.php",
+      "line": 19,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-38",
+      "cwe": "CWE-78",
+      "file": "apps/dvwa/vulnerabilities/exec/source/medium.php",
+      "line": 23,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-39",
+      "cwe": "CWE-94",
+      "file": "apps/dvwa/vulnerabilities/exec/source/medium.php",
+      "line": 23,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-40",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/fi/source/high.php",
+      "line": 7,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-41",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 5,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-42",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 5,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-43",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 5,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-44",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 6,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-45",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 6,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-46",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 6,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-47",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 8,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-48",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 8,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-49",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 8,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-50",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 9,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-51",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 9,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-52",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/help.js",
+      "line": 9,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-53",
+      "cwe": "CWE-95",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high.js",
+      "line": 1,
+      "severity": "High",
+      "message": "eval() called with a non-literal expression. If the argument can be influenced by user input, this is a critical code injection vulnerability. Remove eval() or replace with JSON.parse() / a safe expression parser.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-54",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 13,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-55",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 13,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-56",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 13,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-57",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 13,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-58",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 534,
+      "severity": "Critical",
+      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-59",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 534,
+      "severity": "High",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-60",
+      "cwe": "CWE-798",
+      "file": "apps/dvwa/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "line": 534,
+      "severity": "Critical",
+      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
+      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "SG-61",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli/source/low.php",
+      "line": 10,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-62",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli/source/low.php",
+      "line": 31,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-63",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli_blind/source/high.php",
+      "line": 11,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-64",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli_blind/source/high.php",
+      "line": 33,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-65",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli_blind/source/low.php",
+      "line": 11,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-66",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli_blind/source/low.php",
+      "line": 32,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-67",
+      "cwe": "CWE-89",
+      "file": "apps/dvwa/vulnerabilities/sqli_blind/source/medium.php",
+      "line": 34,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-68",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_help.php",
+      "line": 20,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-69",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_help.php",
+      "line": 22,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-70",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source.php",
+      "line": 63,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-71",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source.php",
+      "line": 67,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-72",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source.php",
+      "line": 68,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-73",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source_all.php",
+      "line": 14,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-74",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source_all.php",
+      "line": 18,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-75",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source_all.php",
+      "line": 22,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-76",
+      "cwe": "CWE-918",
+      "file": "apps/dvwa/vulnerabilities/view_source_all.php",
+      "line": 26,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

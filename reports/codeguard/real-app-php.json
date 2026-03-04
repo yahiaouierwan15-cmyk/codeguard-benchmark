@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "scanner": {
+    "name": "CodeGuard"
+  },
+  "vulnerabilities": [
+    {
+      "id": "SG-1",
+      "cwe": "CWE-89",
+      "file": "apps/real-app-php/admin.php",
+      "line": 47,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-2",
+      "cwe": "CWE-918",
+      "file": "apps/real-app-php/admin.php",
+      "line": 54,
+      "severity": "High",
+      "message": "File name based on user input risks server-side request forgery.",
+      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-3",
+      "cwe": "CWE-78",
+      "file": "apps/real-app-php/admin.php",
+      "line": 59,
+      "severity": "High",
+      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-4",
+      "cwe": "CWE-94",
+      "file": "apps/real-app-php/admin.php",
+      "line": 59,
+      "severity": "Critical",
+      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-5",
+      "cwe": "CWE-79",
+      "file": "apps/real-app-php/admin.php",
+      "line": 61,
+      "severity": "Critical",
+      "message": "`Echo`ing user input risks cross-site scripting vulnerability. You should use `htmlentities()` when showing data to users.",
+      "rule_id": "php.lang.security.injection.echoed-request.echoed-request",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "SG-6",
+      "cwe": "CWE-89",
+      "file": "apps/real-app-php/submit.php",
+      "line": 33,
+      "severity": "Critical",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
+      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "confidence": "MEDIUM"
+    }
+  ]
+}
