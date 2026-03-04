@@ -1,0 +1,9 @@
+[submodule "apps/webgoat"]
+	path = apps/webgoat
+	url = https://github.com/WebGoat/WebGoat.git
+[submodule "apps/nodegoat"]
+	path = apps/nodegoat
+	url = https://github.com/OWASP/NodeGoat.git
+[submodule "apps/dvwa"]
+	path = apps/dvwa
+	url = https://github.com/digininja/DVWA.git

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "RP-001",
+    "file": "routes/posts.py",
+    "line_start": 24,
+    "line_end": 25,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in GET /posts/search — keyword query parameter concatenated into LIKE clause via string concatenation without parameterization",
+    "poc": null
+  },
+  {
+    "id": "RP-002",
+    "file": "routes/posts.py",
+    "line_start": 47,
+    "line_end": 47,
+    "cwe": "CWE-918",
+    "severity": "High",
+    "description": "SSRF in GET /posts/preview-image — user-controlled 'url' parameter fetched server-side via requests.get() without validation or allowlist",
+    "poc": null
+  },
+  {
+    "id": "RP-003",
+    "file": "utils/files.py",
+    "line_start": 25,
+    "line_end": 25,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command Injection in convert_image() — user-supplied filename parameter interpolated into shell command string with shell=True",
+    "poc": null
+  },
+  {
+    "id": "RP-004",
+    "file": "utils/files.py",
+    "line_start": 14,
+    "line_end": 15,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path Traversal in get_file_content() — user-supplied filename joined to UPLOAD_DIR without canonicalization or boundary check",
+    "poc": null
+  },
+  {
+    "id": "RP-005",
+    "file": "routes/auth.py",
+    "line_start": 27,
+    "line_end": 27,
+    "cwe": "CWE-328",
+    "severity": "High",
+    "description": "Weak password hashing — hashlib.md5 used to hash passwords before storing in database; MD5 is cryptographically broken and unsuitable for password storage",
+    "poc": null
+  },
+  {
+    "id": "RP-006",
+    "file": "routes/auth.py",
+    "line_start": 11,
+    "line_end": 11,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "Hardcoded API secret key — API_SECRET_KEY assigned a literal string value committed to source code, exposing the signing key",
+    "poc": null
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "WG-001",
+    "file": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjection.java",
+    "line_start": 40,
+    "line_end": 60,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL query built with string concatenation from user input",
+    "poc": null
+  },
+  {
+    "id": "WG-002",
+    "file": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallengeLogin.java",
+    "line_start": 50,
+    "line_end": 80,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "Login bypass via SQL injection",
+    "poc": null
+  },
+  {
+    "id": "WG-003",
+    "file": "src/main/java/org/owasp/webgoat/lessons/xxe/SimpleXXE.java",
+    "line_start": 50,
+    "line_end": 80,
+    "cwe": "CWE-611",
+    "severity": "High",
+    "description": "XML External Entity injection — XML parsed without disabling external entities",
+    "poc": null
+  },
+  {
+    "id": "WG-004",
+    "file": "src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUpload.java",
+    "line_start": 50,
+    "line_end": 80,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path traversal — user-controlled filename used to construct file path",
+    "poc": null
+  },
+  {
+    "id": "WG-005",
+    "file": "src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask1.java",
+    "line_start": 30,
+    "line_end": 60,
+    "cwe": "CWE-918",
+    "severity": "High",
+    "description": "SSRF — user-supplied URL fetched server-side without validation",
+    "poc": null
+  },
+  {
+    "id": "WG-006",
+    "file": "src/main/java/org/owasp/webgoat/lessons/deserialization/InsecureDeserializationTask.java",
+    "line_start": 40,
+    "line_end": 80,
+    "cwe": "CWE-502",
+    "severity": "Critical",
+    "description": "Insecure Java deserialization of untrusted data",
+    "poc": null
+  },
+  {
+    "id": "WG-007",
+    "file": "src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScriptingLesson6a.java",
+    "line_start": 40,
+    "line_end": 70,
+    "cwe": "CWE-79",
+    "severity": "Medium",
+    "description": "Reflected XSS — user input echoed without encoding",
+    "poc": null
+  },
+  {
+    "id": "WG-008",
+    "file": "src/main/java/org/owasp/webgoat/lessons/xss/stored/StoredXssComments.java",
+    "line_start": 30,
+    "line_end": 60,
+    "cwe": "CWE-79",
+    "severity": "High",
+    "description": "Stored XSS — comment stored and reflected without sanitization",
+    "poc": null
+  },
+  {
+    "id": "WG-009",
+    "file": "src/main/java/org/owasp/webgoat/lessons/jwt/JWTSecretKeyEndpoint.java",
+    "line_start": 40,
+    "line_end": 80,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "JWT signed with hardcoded secret key",
+    "poc": null
+  },
+  {
+    "id": "WG-010",
+    "file": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6a.java",
+    "line_start": 40,
+    "line_end": 80,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "Advanced SQL injection — UNION-based query",
+    "poc": null
+  }
+]

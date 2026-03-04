@@ -1,0 +1,52 @@
+[
+  {
+    "id": "DV-001",
+    "file": "vulnerabilities/sqli/source/low.php",
+    "line_start": 10,
+    "line_end": 11,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection — user-supplied id parameter directly concatenated into SQL query string without parameterization",
+    "poc": null
+  },
+  {
+    "id": "DV-002",
+    "file": "vulnerabilities/xss_r/source/low.php",
+    "line_start": 8,
+    "line_end": 8,
+    "cwe": "CWE-79",
+    "severity": "Medium",
+    "description": "Reflected XSS — GET parameter 'name' echoed directly into HTML response without any encoding or sanitization",
+    "poc": null
+  },
+  {
+    "id": "DV-003",
+    "file": "vulnerabilities/xss_s/source/low.php",
+    "line_start": 16,
+    "line_end": 17,
+    "cwe": "CWE-79",
+    "severity": "High",
+    "description": "Stored XSS — guestbook comment and name stored in database and rendered without HTML encoding, enabling persistent XSS attacks",
+    "poc": null
+  },
+  {
+    "id": "DV-004",
+    "file": "vulnerabilities/exec/source/low.php",
+    "line_start": 10,
+    "line_end": 14,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command Injection — user-controlled 'ip' parameter appended directly to shell_exec ping command without sanitization",
+    "poc": null
+  },
+  {
+    "id": "DV-005",
+    "file": "vulnerabilities/fi/source/low.php",
+    "line_start": 4,
+    "line_end": 4,
+    "cwe": "CWE-98",
+    "severity": "High",
+    "description": "File Inclusion (LFI/RFI) — GET parameter 'page' used directly as the file path to include without any validation or path restriction",
+    "poc": null
+  }
+]

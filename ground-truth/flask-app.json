@@ -1,0 +1,72 @@
+[
+  {
+    "id": "FA-001",
+    "file": "app.py",
+    "line_start": 27,
+    "line_end": 28,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in /users endpoint — query string built via concatenation of unsanitized 'name' query parameter",
+    "poc": "docs/poc/flask-app-sqli-1.md"
+  },
+  {
+    "id": "FA-002",
+    "file": "app.py",
+    "line_start": 38,
+    "line_end": 38,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command Injection in /ping endpoint — 'host' query parameter passed to shell via subprocess.check_output with shell=True",
+    "poc": null
+  },
+  {
+    "id": "FA-003",
+    "file": "app.py",
+    "line_start": 46,
+    "line_end": 46,
+    "cwe": "CWE-918",
+    "severity": "High",
+    "description": "SSRF in /fetch endpoint — user-controlled 'url' parameter fetched server-side via requests.get without validation",
+    "poc": null
+  },
+  {
+    "id": "FA-004",
+    "file": "app.py",
+    "line_start": 55,
+    "line_end": 56,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path Traversal in /file endpoint — 'name' query parameter joined to base directory without sanitization, allowing traversal outside uploads folder",
+    "poc": null
+  },
+  {
+    "id": "FA-005",
+    "file": "app.py",
+    "line_start": 67,
+    "line_end": 68,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in /login endpoint — username and password interpolated into SQL query via f-string, enabling authentication bypass",
+    "poc": null
+  },
+  {
+    "id": "FA-006",
+    "file": "app.py",
+    "line_start": 82,
+    "line_end": 82,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in /search endpoint — 'q' query parameter concatenated into LIKE clause without parameterization",
+    "poc": null
+  },
+  {
+    "id": "FA-007",
+    "file": "app.py",
+    "line_start": 13,
+    "line_end": 13,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "Hardcoded secret key — SECRET_KEY assigned a literal string value committed to source code",
+    "poc": null
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "RH-001",
+    "file": "submit.php",
+    "line_start": 33,
+    "line_end": 34,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in submit.php — POST name and message parameters concatenated directly into INSERT query string without prepared statements",
+    "poc": null
+  },
+  {
+    "id": "RH-002",
+    "file": "index.php",
+    "line_start": 35,
+    "line_end": 39,
+    "cwe": "CWE-79",
+    "severity": "High",
+    "description": "Stored XSS in index.php — name and message fields retrieved from database and echoed with <?= ?> shorthand without htmlspecialchars(), enabling persistent XSS",
+    "poc": null
+  },
+  {
+    "id": "RH-003",
+    "file": "admin.php",
+    "line_start": 54,
+    "line_end": 54,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path Traversal in admin.php view-log action — GET 'file' parameter appended to log directory path without sanitization, allowing traversal to arbitrary files",
+    "poc": null
+  },
+  {
+    "id": "RH-004",
+    "file": "admin.php",
+    "line_start": 59,
+    "line_end": 59,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command Injection in admin.php export action — GET 'format' parameter appended to shell_exec() command without sanitization",
+    "poc": null
+  },
+  {
+    "id": "RH-005",
+    "file": "config.php",
+    "line_start": 6,
+    "line_end": 9,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "Hardcoded database credentials — DB_HOST, DB_NAME, DB_USER, DB_PASS defined as hardcoded string constants in config.php committed to source control",
+    "poc": null
+  }
+]

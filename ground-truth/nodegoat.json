@@ -1,0 +1,62 @@
+[
+  {
+    "id": "NG-001",
+    "file": "app/routes/contributions.js",
+    "line_start": 32,
+    "line_end": 34,
+    "cwe": "CWE-95",
+    "severity": "Critical",
+    "description": "Server-Side JavaScript Injection — eval() called directly on user-supplied request body fields (preTax, afterTax, roth), allowing arbitrary code execution",
+    "poc": "docs/poc/nodegoat-eval-1.md"
+  },
+  {
+    "id": "NG-002",
+    "file": "app/data/allocations-dao.js",
+    "line_start": 77,
+    "line_end": 79,
+    "cwe": "CWE-943",
+    "severity": "High",
+    "description": "NoSQL Injection — unsanitized 'threshold' query parameter interpolated into MongoDB $where clause, allowing arbitrary JavaScript injection into the query engine",
+    "poc": "docs/poc/nodegoat-nosql-1.md"
+  },
+  {
+    "id": "NG-003",
+    "file": "app/routes/session.js",
+    "line_start": 117,
+    "line_end": 117,
+    "cwe": "CWE-601",
+    "severity": "Medium",
+    "description": "Open Redirect — session.js issues redirect based on application logic without validating the destination URL could be attacker-controlled via other paths",
+    "poc": null
+  },
+  {
+    "id": "NG-004",
+    "file": "config/env/all.js",
+    "line_start": 8,
+    "line_end": 9,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "Hardcoded secrets — cookieSecret and cryptoKey are hardcoded literal strings in the configuration file, exposed in source control",
+    "poc": null
+  },
+  {
+    "id": "NG-005",
+    "file": "app/routes/profile.js",
+    "line_start": 59,
+    "line_end": 61,
+    "cwe": "CWE-1333",
+    "severity": "Medium",
+    "description": "ReDoS — regex pattern /([0-9]+)+\\#/ with nested quantifiers applied to user-supplied bankRouting input; catastrophic backtracking on crafted input causes CPU exhaustion",
+    "poc": "docs/poc/nodegoat-redos-1.md"
+  },
+  {
+    "id": "NG-006",
+    "file": "app/routes/session.js",
+    "line_start": 64,
+    "line_end": 64,
+    "cwe": "CWE-532",
+    "severity": "Low",
+    "description": "Sensitive data logged — username from failed login attempt logged to console without sanitization, enabling log injection and information leakage",
+    "poc": null
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "RN-001",
+    "file": "src/routes/tasks.js",
+    "line_start": 14,
+    "line_end": 14,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL Injection in GET /tasks/:id/user — req.params.id directly concatenated into query string passed to better-sqlite3 prepare()",
+    "poc": null
+  },
+  {
+    "id": "RN-002",
+    "file": "src/routes/tasks.js",
+    "line_start": 23,
+    "line_end": 23,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path Traversal in GET /tasks/attachment — req.query.filename concatenated with './uploads/' prefix without sanitization, allowing directory traversal",
+    "poc": null
+  },
+  {
+    "id": "RN-003",
+    "file": "src/routes/tasks.js",
+    "line_start": 31,
+    "line_end": 31,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command Injection in POST /tasks/convert — req.body.filename passed to exec() shell command without sanitization",
+    "poc": null
+  },
+  {
+    "id": "RN-004",
+    "file": "src/routes/tasks.js",
+    "line_start": 48,
+    "line_end": 48,
+    "cwe": "CWE-79",
+    "severity": "Medium",
+    "description": "Reflected XSS in GET /tasks/search — req.query.q interpolated directly into HTML response template without encoding",
+    "poc": null
+  },
+  {
+    "id": "RN-005",
+    "file": "src/routes/users.js",
+    "line_start": 34,
+    "line_end": 34,
+    "cwe": "CWE-601",
+    "severity": "Medium",
+    "description": "Open Redirect in GET /users/redirect — req.query.returnUrl passed directly to res.redirect() without URL validation",
+    "poc": null
+  },
+  {
+    "id": "RN-006",
+    "file": "src/routes/users.js",
+    "line_start": 10,
+    "line_end": 10,
+    "cwe": "CWE-798",
+    "severity": "High",
+    "description": "Hardcoded JWT secret — SECRET constant assigned literal string 'jwt-secret-abc123xyz' committed to source code",
+    "poc": null
+  }
+]
