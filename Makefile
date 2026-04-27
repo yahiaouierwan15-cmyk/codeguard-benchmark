@@ -64,10 +64,21 @@ run: run-codeguard run-semgrep run-bandit
 	@echo ""
 	@echo "==> All scanners complete. Run 'make evaluate' to compare."
 
+# Default benchmark run is rules-only. AI triage / AI review are
+# decision-helpful in production but distort metrics on synthetic
+# benchmark corpora (lesson/challenge code reads as "example → FP" to
+# the model, dropping real TPs). Use `make run-codeguard-ai` to
+# include them when you want a feel-test number.
 run-codeguard:
 	@echo ""
-	@echo "==> Running CodeGuard..."
+	@echo "==> Running CodeGuard (rules-only)..."
 	$(PYTHON) $(RUNNERS_DIR)/run_codeguard.py
+
+run-codeguard-ai:
+	@echo ""
+	@echo "==> Running CodeGuard with AI triage + review..."
+	@set -a; [ -f ../codeguard-worker/.env ] && . ../codeguard-worker/.env; set +a; \
+		$(PYTHON) $(RUNNERS_DIR)/run_codeguard.py --with-ai
 
 run-semgrep:
 	@echo ""

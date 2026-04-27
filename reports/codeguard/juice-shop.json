@@ -13,13 +13,13 @@
       "line": 5
     },
     {
-      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-mysql-query-template",
       "category": "sast",
-      "name": "express-sequelize-injection",
-      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-mysql-query-template",
+      "message": "Template-literal SQL with interpolation. Use ?-placeholders and an array of values.\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "HIGH",
+      "confidence": "MEDIUM",
       "file": "data/static/codefixes/dbSchemaChallenge_3.ts",
       "line": 11
     },
@@ -35,24 +35,24 @@
       "line": 49
     },
     {
-      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-mysql-query-template",
       "category": "sast",
-      "name": "express-sequelize-injection",
-      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-mysql-query-template",
+      "message": "Template-literal SQL with interpolation. Use ?-placeholders and an array of values.\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "HIGH",
+      "confidence": "MEDIUM",
       "file": "data/static/codefixes/unionSqlInjectionChallenge_1.ts",
       "line": 6
     },
     {
-      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-mysql-query-template",
       "category": "sast",
-      "name": "express-sequelize-injection",
-      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-mysql-query-template",
+      "message": "Template-literal SQL with interpolation. Use ?-placeholders and an array of values.\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "HIGH",
+      "confidence": "MEDIUM",
       "file": "data/static/codefixes/unionSqlInjectionChallenge_3.ts",
       "line": 10
     },
@@ -211,13 +211,13 @@
       "line": 14
     },
     {
-      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-mysql-query-template",
       "category": "sast",
-      "name": "express-sequelize-injection",
-      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-mysql-query-template",
+      "message": "Template-literal SQL with interpolation. Use ?-placeholders and an array of values.\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "HIGH",
+      "confidence": "MEDIUM",
       "file": "routes/login.ts",
       "line": 34
     },
@@ -266,13 +266,13 @@
       "line": 19
     },
     {
-      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-mysql-query-template",
       "category": "sast",
-      "name": "express-sequelize-injection",
-      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-mysql-query-template",
+      "message": "Template-literal SQL with interpolation. Use ?-placeholders and an array of values.\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "HIGH",
+      "confidence": "MEDIUM",
       "file": "routes/search.ts",
       "line": 23
     },

@@ -79,13 +79,13 @@
       "line": 6
     },
     {
-      "id": "ruby.rails.security.audit.xss.avoid-html-safe.avoid-html-safe",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.ruby-html-safe-on-input",
       "category": "sast",
-      "name": "avoid-html-safe",
-      "message": "'html_safe()' does not make the supplied string safe. 'html_safe()' bypasses HTML escaping. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here.",
-      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "name": "ruby-html-safe-on-input",
+      "message": ".html_safe / raw() bypasses Rails' XSS auto-escaping. Only use on static content you fully control.\n",
+      "cwe": "CWE-79",
       "severity": "medium",
-      "confidence": "LOW",
+      "confidence": "MEDIUM",
       "file": "app/controllers/password_resets_controller.rb",
       "line": 36
     },
@@ -134,13 +134,13 @@
       "line": 26
     },
     {
-      "id": "ruby.rails.security.injection.tainted-sql-string.tainted-sql-string",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.sql-injection-ruby-find-by",
       "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as ActiveRecord which will protect your queries.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "name": "sql-injection-ruby-find-by",
+      "message": "Active Record SQL injection: user input interpolated into find_by / where / find_by_sql. Use parameterized form: where(\"col = ?\", value).\n",
+      "cwe": "CWE-89",
       "severity": "high",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "file": "app/controllers/users_controller.rb",
       "line": 29
     },
@@ -154,6 +154,17 @@
       "confidence": "LOW",
       "file": "app/controllers/users_controller.rb",
       "line": 55
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.command-injection-ruby",
+      "category": "sast",
+      "name": "command-injection-ruby",
+      "message": "Command injection: user input flows into a shell command. Use system(cmd, arg1, arg2) (array form, no shell).\n",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/models/benefits.rb",
+      "line": 15
     },
     {
       "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",

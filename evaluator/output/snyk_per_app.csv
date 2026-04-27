@@ -1,0 +1,14 @@
+app,language,loc,gt_total,findings_total,dedup_removed,tp,fp,fn,precision,recall,f1,fp_per_kloc
+webgoat,java,71331,10,0,0,0,0,10,0.0,0.0,0.0,0.0
+nodegoat,javascript,3291,6,0,0,0,0,6,0.0,0.0,0.0,0.0
+dvwa,php,11291,5,0,0,0,0,5,0.0,0.0,0.0,0.0
+flask-app,python,69,7,0,0,0,0,7,0.0,0.0,0.0,0.0
+real-app-nodejs,javascript,175,6,0,0,0,0,6,0.0,0.0,0.0,0.0
+real-app-python,python,153,6,0,0,0,0,6,0.0,0.0,0.0,0.0
+real-app-php,php,151,5,0,0,0,0,5,0.0,0.0,0.0,0.0
+juice-shop,typescript,70848,15,0,0,0,0,15,0.0,0.0,0.0,0.0
+railsgoat,ruby,8931,10,0,0,0,0,10,0.0,0.0,0.0,0.0
+vulnpy,python,93,8,0,0,0,0,8,0.0,0.0,0.0,0.0
+xvwa,php,23234,8,0,0,0,0,8,0.0,0.0,0.0,0.0
+vulnerable-node,javascript,3297,6,0,0,0,0,6,0.0,0.0,0.0,0.0
+pixi,javascript,6566,6,0,0,0,0,6,0.0,0.0,0.0,0.0
