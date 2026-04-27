@@ -1,377 +1,319 @@
 {
+  "version": "3.0",
+  "corpus": {
+    "apps": 13,
+    "total_gt_vulns": 98,
+    "languages": [
+      "java",
+      "javascript",
+      "php",
+      "python",
+      "ruby",
+      "typescript"
+    ]
+  },
   "global": {
     "codeguard": {
-      "tp": 28,
-      "fp": 1593,
-      "fn": 17,
-      "precision": 0.0173,
-      "recall": 0.6222,
-      "f1": 0.0336
+      "tp": 44,
+      "fp": 195,
+      "fn": 54,
+      "precision": 0.1841,
+      "recall": 0.449,
+      "f1": 0.2611,
+      "fp_per_kloc": 0.98,
+      "total_loc": 199430,
+      "total_gt": 98,
+      "precision_ci": [
+        0.137,
+        0.2355
+      ],
+      "recall_ci": [
+        0.3505,
+        0.5514
+      ],
+      "f1_ci": [
+        0.2025,
+        0.3257
+      ],
+      "cwe_coverage": "11/27",
+      "detected_cwes": [
+        "CWE-22",
+        "CWE-502",
+        "CWE-601",
+        "CWE-78",
+        "CWE-79",
+        "CWE-798",
+        "CWE-89",
+        "CWE-918",
+        "CWE-943",
+        "CWE-95",
+        "CWE-98"
+      ]
     },
     "semgrep": {
-      "tp": 20,
-      "fp": 81,
-      "fn": 25,
-      "precision": 0.198,
-      "recall": 0.4444,
-      "f1": 0.274
+      "tp": 32,
+      "fp": 331,
+      "fn": 66,
+      "precision": 0.0882,
+      "recall": 0.3265,
+      "f1": 0.1388,
+      "fp_per_kloc": 1.66,
+      "total_loc": 199430,
+      "total_gt": 98,
+      "precision_ci": [
+        0.0608,
+        0.1183
+      ],
+      "recall_ci": [
+        0.2381,
+        0.4235
+      ],
+      "f1_ci": [
+        0.0976,
+        0.1822
+      ],
+      "cwe_coverage": "9/27",
+      "detected_cwes": [
+        "CWE-22",
+        "CWE-502",
+        "CWE-601",
+        "CWE-78",
+        "CWE-79",
+        "CWE-798",
+        "CWE-89",
+        "CWE-918",
+        "CWE-95"
+      ]
+    },
+    "bandit": {
+      "tp": 9,
+      "fp": 20,
+      "fn": 89,
+      "precision": 0.3103,
+      "recall": 0.0918,
+      "f1": 0.1417,
+      "fp_per_kloc": 0.1,
+      "total_loc": 199430,
+      "total_gt": 98,
+      "precision_ci": [
+        0.1471,
+        0.4828
+      ],
+      "recall_ci": [
+        0.04,
+        0.1538
+      ],
+      "f1_ci": [
+        0.0656,
+        0.2256
+      ],
+      "cwe_coverage": "3/27",
+      "detected_cwes": [
+        "CWE-502",
+        "CWE-78",
+        "CWE-89"
+      ]
     }
   },
   "by_language": {
     "codeguard": {
       "java": {
         "tp": 10,
-        "fp": 1326,
+        "fp": 27,
         "fn": 0,
-        "precision": 0.0075,
+        "precision": 0.2703,
         "recall": 1.0,
-        "f1": 0.0149
+        "f1": 0.4255,
+        "fp_per_kloc": 0.38,
+        "loc": 71331
       },
       "javascript": {
-        "tp": 4,
-        "fp": 152,
-        "fn": 8,
-        "precision": 0.0256,
-        "recall": 0.3333,
-        "f1": 0.0476
+        "tp": 9,
+        "fp": 32,
+        "fn": 15,
+        "precision": 0.2195,
+        "recall": 0.375,
+        "f1": 0.2769,
+        "fp_per_kloc": 2.4,
+        "loc": 13329
       },
       "php": {
-        "tp": 4,
-        "fp": 78,
-        "fn": 6,
-        "precision": 0.0488,
-        "recall": 0.4,
-        "f1": 0.087
+        "tp": 6,
+        "fp": 54,
+        "fn": 12,
+        "precision": 0.1,
+        "recall": 0.3333,
+        "f1": 0.1538,
+        "fp_per_kloc": 1.56,
+        "loc": 34676
       },
       "python": {
-        "tp": 10,
-        "fp": 37,
-        "fn": 3,
-        "precision": 0.2128,
-        "recall": 0.7692,
-        "f1": 0.3333
+        "tp": 17,
+        "fp": 15,
+        "fn": 4,
+        "precision": 0.5312,
+        "recall": 0.8095,
+        "f1": 0.6415,
+        "fp_per_kloc": 47.62,
+        "loc": 315
+      },
+      "typescript": {
+        "tp": 2,
+        "fp": 39,
+        "fn": 13,
+        "precision": 0.0488,
+        "recall": 0.1333,
+        "f1": 0.0714,
+        "fp_per_kloc": 0.55,
+        "loc": 70848
+      },
+      "ruby": {
+        "tp": 0,
+        "fp": 28,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 3.14,
+        "loc": 8931
       }
     },
     "semgrep": {
       "java": {
         "tp": 10,
-        "fp": 7,
+        "fp": 135,
         "fn": 0,
-        "precision": 0.5882,
+        "precision": 0.069,
         "recall": 1.0,
-        "f1": 0.7407
+        "f1": 0.129,
+        "fp_per_kloc": 1.89,
+        "loc": 71331
       },
       "javascript": {
-        "tp": 2,
-        "fp": 14,
-        "fn": 10,
-        "precision": 0.125,
-        "recall": 0.1667,
-        "f1": 0.1429
+        "tp": 5,
+        "fp": 55,
+        "fn": 19,
+        "precision": 0.0833,
+        "recall": 0.2083,
+        "f1": 0.119,
+        "fp_per_kloc": 4.13,
+        "loc": 13329
       },
       "php": {
         "tp": 4,
-        "fp": 46,
-        "fn": 6,
-        "precision": 0.08,
-        "recall": 0.4,
-        "f1": 0.1333
+        "fp": 61,
+        "fn": 14,
+        "precision": 0.0615,
+        "recall": 0.2222,
+        "f1": 0.0964,
+        "fp_per_kloc": 1.76,
+        "loc": 34676
       },
       "python": {
-        "tp": 4,
-        "fp": 14,
-        "fn": 9,
-        "precision": 0.2222,
-        "recall": 0.3077,
-        "f1": 0.2581
+        "tp": 11,
+        "fp": 19,
+        "fn": 10,
+        "precision": 0.3667,
+        "recall": 0.5238,
+        "f1": 0.4314,
+        "fp_per_kloc": 60.32,
+        "loc": 315
+      },
+      "typescript": {
+        "tp": 2,
+        "fp": 31,
+        "fn": 13,
+        "precision": 0.0606,
+        "recall": 0.1333,
+        "f1": 0.0833,
+        "fp_per_kloc": 0.44,
+        "loc": 70848
+      },
+      "ruby": {
+        "tp": 0,
+        "fp": 30,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 3.36,
+        "loc": 8931
+      }
+    },
+    "bandit": {
+      "java": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 71331
+      },
+      "javascript": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 13329
+      },
+      "php": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 18,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 34676
+      },
+      "python": {
+        "tp": 9,
+        "fp": 20,
+        "fn": 12,
+        "precision": 0.3103,
+        "recall": 0.4286,
+        "f1": 0.36,
+        "fp_per_kloc": 63.49,
+        "loc": 315
+      },
+      "typescript": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 70848
+      },
+      "ruby": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 8931
       }
     }
   },
   "by_cwe": {
     "codeguard": {
-      "CWE-918": {
-        "tp": 3,
-        "fp": 14,
-        "fn": 0,
-        "precision": 0.1765,
-        "recall": 1.0,
-        "f1": 0.3
-      },
-      "CWE-22": {
-        "tp": 1,
-        "fp": 0,
-        "fn": 4,
-        "precision": 1.0,
-        "recall": 0.2,
-        "f1": 0.3333
-      },
       "CWE-89": {
-        "tp": 14,
-        "fp": 17,
-        "fn": 1,
-        "precision": 0.4516,
-        "recall": 0.9333,
-        "f1": 0.6087
+        "tp": 17,
+        "fp": 29,
+        "fn": 8,
+        "precision": 0.3696,
+        "recall": 0.68,
+        "f1": 0.4789
       },
-      "CWE-501": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-328": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-601": {
-        "tp": 0,
-        "fp": 3,
-        "fn": 2,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-23": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-532": {
-        "tp": 1,
-        "fp": 57,
-        "fn": 0,
-        "precision": 0.0172,
-        "recall": 1.0,
-        "f1": 0.0339
-      },
-      "CWE-798": {
-        "tp": 3,
-        "fp": 1436,
-        "fn": 2,
-        "precision": 0.0021,
-        "recall": 0.6,
-        "f1": 0.0042
-      },
-      "CWE-611": {
-        "tp": 0,
-        "fp": 2,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-95": {
-        "tp": 1,
-        "fp": 10,
-        "fn": 0,
-        "precision": 0.0909,
-        "recall": 1.0,
-        "f1": 0.1667
-      },
-      "CWE-78": {
-        "tp": 4,
-        "fp": 17,
-        "fn": 1,
-        "precision": 0.1905,
-        "recall": 0.8,
-        "f1": 0.3077
-      },
-      "CWE-1333": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-522": {
-        "tp": 0,
-        "fp": 6,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-943": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-200": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-79": {
-        "tp": 1,
-        "fp": 5,
-        "fn": 3,
-        "precision": 0.1667,
-        "recall": 0.25,
-        "f1": 0.2
-      },
-      "CWE-94": {
-        "tp": 0,
-        "fp": 9,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-98": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-704": {
-        "tp": 0,
-        "fp": 4,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-489": {
-        "tp": 0,
-        "fp": 2,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-327": {
-        "tp": 0,
-        "fp": 6,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      }
-    },
-    "semgrep": {
       "CWE-918": {
-        "tp": 3,
-        "fp": 14,
-        "fn": 0,
-        "precision": 0.1765,
-        "recall": 1.0,
-        "f1": 0.3
-      },
-      "CWE-22": {
-        "tp": 1,
-        "fp": 0,
-        "fn": 4,
-        "precision": 1.0,
-        "recall": 0.2,
-        "f1": 0.3333
-      },
-      "CWE-89": {
-        "tp": 10,
-        "fp": 17,
-        "fn": 5,
-        "precision": 0.3704,
-        "recall": 0.6667,
-        "f1": 0.4762
-      },
-      "CWE-501": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-328": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-601": {
-        "tp": 0,
-        "fp": 2,
-        "fn": 2,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-23": {
-        "tp": 0,
-        "fp": 1,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-95": {
-        "tp": 1,
-        "fp": 2,
-        "fn": 0,
-        "precision": 0.3333,
-        "recall": 1.0,
-        "f1": 0.5
-      },
-      "CWE-522": {
-        "tp": 0,
-        "fp": 6,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-943": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-798": {
-        "tp": 0,
-        "fp": 2,
-        "fn": 5,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-1333": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-532": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-78": {
         "tp": 4,
         "fp": 10,
         "fn": 1,
@@ -379,7 +321,23 @@
         "recall": 0.8,
         "f1": 0.4211
       },
-      "CWE-200": {
+      "CWE-22": {
+        "tp": 4,
+        "fp": 11,
+        "fn": 4,
+        "precision": 0.2667,
+        "recall": 0.5,
+        "f1": 0.3478
+      },
+      "CWE-330": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-501": {
         "tp": 0,
         "fp": 1,
         "fn": 0,
@@ -387,23 +345,255 @@
         "recall": 0.0,
         "f1": 0.0
       },
-      "CWE-79": {
-        "tp": 1,
-        "fp": 5,
-        "fn": 3,
-        "precision": 0.1667,
-        "recall": 0.25,
-        "f1": 0.2
-      },
-      "CWE-94": {
+      "CWE-328": {
         "tp": 0,
-        "fp": 9,
+        "fp": 6,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-502": {
+        "tp": 1,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333
+      },
+      "CWE-319": {
+        "tp": 0,
+        "fp": 5,
         "fn": 0,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
       },
+      "CWE-601": {
+        "tp": 3,
+        "fp": 7,
+        "fn": 1,
+        "precision": 0.3,
+        "recall": 0.75,
+        "f1": 0.4286
+      },
+      "CWE-23": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-798": {
+        "tp": 4,
+        "fp": 14,
+        "fn": 6,
+        "precision": 0.2222,
+        "recall": 0.4,
+        "f1": 0.2857
+      },
+      "CWE-943": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.3333,
+        "recall": 0.5,
+        "f1": 0.4
+      },
+      "CWE-95": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333
+      },
+      "CWE-732": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-522": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1333": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-532": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-79": {
+        "tp": 4,
+        "fp": 32,
+        "fn": 6,
+        "precision": 0.1111,
+        "recall": 0.4,
+        "f1": 0.1739
+      },
+      "CWE-200": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-94": {
+        "tp": 0,
+        "fp": 16,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-78": {
+        "tp": 4,
+        "fp": 9,
+        "fn": 3,
+        "precision": 0.3077,
+        "recall": 0.5714,
+        "f1": 0.4
+      },
       "CWE-98": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.3333,
+        "recall": 0.5,
+        "f1": 0.4
+      },
+      "CWE-327": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-915": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1104": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-208": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-73": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-611": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-134": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-942": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-548": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-639": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-209": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-434": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-285": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-640": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-916": {
         "tp": 0,
         "fp": 0,
         "fn": 1,
@@ -413,7 +603,273 @@
       },
       "CWE-704": {
         "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-20": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-613": {
+        "tp": 0,
         "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-256": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "semgrep": {
+      "CWE-89": {
+        "tp": 13,
+        "fp": 29,
+        "fn": 12,
+        "precision": 0.3095,
+        "recall": 0.52,
+        "f1": 0.3881
+      },
+      "CWE-918": {
+        "tp": 5,
+        "fp": 10,
+        "fn": 0,
+        "precision": 0.3333,
+        "recall": 1.0,
+        "f1": 0.5
+      },
+      "CWE-22": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 6,
+        "precision": 0.4,
+        "recall": 0.25,
+        "f1": 0.3077
+      },
+      "CWE-321": {
+        "tp": 0,
+        "fp": 13,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-352": {
+        "tp": 0,
+        "fp": 104,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-330": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-501": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-328": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-502": {
+        "tp": 1,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333
+      },
+      "CWE-1004": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-319": {
+        "tp": 0,
+        "fp": 14,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-601": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 2,
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.4444
+      },
+      "CWE-23": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-353": {
+        "tp": 0,
+        "fp": 11,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-95": {
+        "tp": 2,
+        "fp": 5,
+        "fn": 0,
+        "precision": 0.2857,
+        "recall": 1.0,
+        "f1": 0.4444
+      },
+      "CWE-798": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 9,
+        "precision": 0.125,
+        "recall": 0.1,
+        "f1": 0.1111
+      },
+      "CWE-732": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-522": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-943": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1333": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-532": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-697": {
+        "tp": 0,
+        "fp": 9,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-200": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-346": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-94": {
+        "tp": 0,
+        "fp": 15,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-252": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-78": {
+        "tp": 4,
+        "fp": 6,
+        "fn": 3,
+        "precision": 0.4,
+        "recall": 0.5714,
+        "f1": 0.4706
+      },
+      "CWE-79": {
+        "tp": 2,
+        "fp": 36,
+        "fn": 8,
+        "precision": 0.0526,
+        "recall": 0.2,
+        "f1": 0.0833
+      },
+      "CWE-98": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-704": {
+        "tp": 0,
+        "fp": 6,
         "fn": 0,
         "precision": 0.0,
         "recall": 0.0,
@@ -429,12 +885,461 @@
       },
       "CWE-327": {
         "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-915": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1104": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-73": {
+        "tp": 0,
         "fp": 4,
         "fn": 0,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
+      },
+      "CWE-611": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-134": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-548": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-639": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-209": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-434": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-285": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-640": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-916": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-939": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-676": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-256": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "bandit": {
+      "CWE-89": {
+        "tp": 5,
+        "fp": 1,
+        "fn": 20,
+        "precision": 0.8333,
+        "recall": 0.2,
+        "f1": 0.3226
+      },
+      "CWE-22": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-918": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-95": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-943": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-601": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-798": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1333": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-532": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-79": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-78": {
+        "tp": 3,
+        "fp": 7,
+        "fn": 4,
+        "precision": 0.3,
+        "recall": 0.4286,
+        "f1": 0.3529
+      },
+      "CWE-98": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-259": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-400": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-94": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-327": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-328": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-639": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-209": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-330": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-611": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-434": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-285": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-640": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-916": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-200": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1104": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-502": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667
+      },
+      "CWE-20": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-915": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-256": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
       }
     }
+  },
+  "unique_detections": {
+    "codeguard": [
+      {
+        "app": "nodegoat",
+        "gt_id": "NG-002",
+        "cwe": "CWE-943",
+        "description": "NoSQL Injection \u2014 unsanitized 'threshold' query parameter interpolated into MongoDB $where clause, allowing arbitrary JavaScript injection into the query engine"
+      },
+      {
+        "app": "dvwa",
+        "gt_id": "DV-002",
+        "cwe": "CWE-79",
+        "description": "Reflected XSS \u2014 GET parameter 'name' echoed directly into HTML response without any encoding or sanitization"
+      },
+      {
+        "app": "flask-app",
+        "gt_id": "FA-007",
+        "cwe": "CWE-798",
+        "description": "Hardcoded secret key \u2014 SECRET_KEY assigned a literal string value committed to source code"
+      },
+      {
+        "app": "flask-app",
+        "gt_id": "FA-004",
+        "cwe": "CWE-22",
+        "description": "Path Traversal in /file endpoint \u2014 'name' query parameter joined to base directory without sanitization, allowing traversal outside uploads folder"
+      },
+      {
+        "app": "real-app-nodejs",
+        "gt_id": "RN-006",
+        "cwe": "CWE-798",
+        "description": "Hardcoded JWT secret \u2014 SECRET constant assigned literal string 'jwt-secret-abc123xyz' committed to source code"
+      },
+      {
+        "app": "real-app-nodejs",
+        "gt_id": "RN-002",
+        "cwe": "CWE-22",
+        "description": "Path Traversal in GET /tasks/attachment \u2014 req.query.filename concatenated with './uploads/' prefix without sanitization, allowing directory traversal"
+      },
+      {
+        "app": "real-app-nodejs",
+        "gt_id": "RN-005",
+        "cwe": "CWE-601",
+        "description": "Open Redirect in GET /users/redirect \u2014 req.query.returnUrl passed directly to res.redirect() without URL validation"
+      },
+      {
+        "app": "real-app-python",
+        "gt_id": "RP-006",
+        "cwe": "CWE-798",
+        "description": "Hardcoded API secret key \u2014 API_SECRET_KEY assigned a literal string value committed to source code, exposing the signing key"
+      },
+      {
+        "app": "xvwa",
+        "gt_id": "XW-002",
+        "cwe": "CWE-79",
+        "description": "Reflected XSS \u2014 $_GET echoed without encoding"
+      },
+      {
+        "app": "xvwa",
+        "gt_id": "XW-003",
+        "cwe": "CWE-98",
+        "description": "Local file inclusion \u2014 include() with user-controlled path"
+      }
+    ],
+    "semgrep": [
+      {
+        "app": "vulnpy",
+        "gt_id": "VP-008",
+        "cwe": "CWE-95",
+        "description": "Code injection \u2014 eval() called on user-controlled input"
+      },
+      {
+        "app": "xvwa",
+        "gt_id": "XW-007",
+        "cwe": "CWE-918",
+        "description": "SSRF \u2014 file_get_contents() with user-controlled URL"
+      }
+    ],
+    "bandit": []
   }
 }

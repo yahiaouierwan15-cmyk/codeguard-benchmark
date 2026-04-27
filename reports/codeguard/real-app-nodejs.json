@@ -1,158 +1,117 @@
 {
-  "schema_version": "1.0.0",
-  "scanner": {
-    "name": "CodeGuard"
-  },
+  "version": "3.0.0",
   "vulnerabilities": [
     {
-      "id": "SG-1",
-      "cwe": "CWE-532",
-      "file": "apps/real-app-nodejs/src/index.js",
-      "line": 25,
-      "severity": "High",
-      "message": "Sensitive variable logged to console. Passwords and secrets should never appear in logs. Remove this log statement or redact the sensitive field.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.password-in-console-log-js",
-      "confidence": "MEDIUM"
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.traversal.fs-concat-user-input-js",
+      "category": "sast",
+      "name": "fs-concat-user-input-js",
+      "message": "File read with user-controlled path via string concatenation \u2014 path traversal risk. An attacker can use \"../\" sequences to access arbitrary files. Use path.resolve() and verify the resolved path starts with the allowed directory.\n",
+      "cwe": "CWE-22",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "src/routes/tasks.js",
+      "line": 22
     },
     {
-      "id": "SG-2",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 24,
-      "severity": "High",
-      "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
-      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
-      "confidence": "MEDIUM"
+      "id": "javascript.lang.security.detect-child-process.detect-child-process",
+      "category": "sast",
+      "name": "detect-child-process",
+      "message": "Detected calls to child_process from a function argument `req`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "src/routes/tasks.js",
+      "line": 31
     },
     {
-      "id": "SG-3",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.xss.res-send-template-literal-js",
+      "category": "sast",
+      "name": "res-send-template-literal-js",
+      "message": "Reflected XSS \u2014 res.send() outputs a template literal that interpolates user-controlled input. Never build HTML responses by interpolating req.query or req.body values directly. Use a templating engine with auto-escaping (Handlebars, Nunjucks, EJS with <%= escape %>) or sanitize with he/DOMPurify.\n",
       "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 48,
-      "severity": "High",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/tasks.js",
+      "line": 42
+    },
+    {
+      "id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "category": "sast",
+      "name": "raw-html-format",
       "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
-      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
+      "line": 48
     },
     {
-      "id": "SG-4",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 49,
-      "severity": "High",
-      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
-      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-5",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 53,
-      "severity": "High",
+      "id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "category": "sast",
+      "name": "direct-response-write",
       "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
-      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
+      "line": 53
     },
     {
-      "id": "SG-6",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js-extended",
+      "category": "sast",
+      "name": "hardcoded-api-key-assignment-js-extended",
+      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead: process.env.VAR_NAME\n",
       "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "Critical",
-      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
-      "confidence": "HIGH"
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/users.js",
+      "line": 10
     },
     {
-      "id": "SG-7",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "High",
-      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
-      "confidence": "MEDIUM"
+      "id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "category": "sast",
+      "name": "hardcoded-jwt-secret",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/users.js",
+      "line": 24
     },
     {
-      "id": "SG-8",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "Critical",
-      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
-      "confidence": "HIGH"
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.redirect.express-open-redirect",
+      "category": "sast",
+      "name": "express-open-redirect",
+      "message": "res.redirect() with user-controlled URL \u2014 open redirect vulnerability. An attacker can redirect victims to phishing sites. Validate the destination against an allowlist of trusted paths/domains or use relative paths only.\n",
+      "cwe": "CWE-601",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/users.js",
+      "line": 33
     },
     {
-      "id": "SG-9",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "Critical",
-      "message": "Hardcoded Anthropic API key assigned to a variable. Use environment variables: process.env.ANTHROPIC_API_KEY\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.anthropic-key-assignment",
-      "confidence": "HIGH"
-    },
-    {
-      "id": "SG-10",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "High",
-      "message": "Hardcoded credential assigned to a sensitive variable name. Use environment variables instead of hardcoding secrets in source code.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-api-key-assignment-js",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-11",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 10,
-      "severity": "Critical",
-      "message": "Hardcoded Supabase key assigned to a variable. Use NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY environment variables.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.supabase-key-assignment",
-      "confidence": "HIGH"
-    },
-    {
-      "id": "SG-12",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 24,
-      "severity": "Critical",
-      "message": "JWT signed/verified with a hardcoded secret. An attacker who reads your source code can forge any token. Use a long random secret from process.env.JWT_SECRET.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-jwt-secret",
-      "confidence": "HIGH"
-    },
-    {
-      "id": "SG-13",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 24,
-      "severity": "High",
-      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
-      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
-      "confidence": "HIGH"
-    },
-    {
-      "id": "SG-14",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 59,
-      "severity": "Critical",
-      "message": "JWT signed/verified with a hardcoded secret. An attacker who reads your source code can forge any token. Use a long random secret from process.env.JWT_SECRET.\n",
-      "rule_id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-jwt-secret",
-      "confidence": "HIGH"
-    },
-    {
-      "id": "SG-15",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
-      "line": 59,
-      "severity": "High",
-      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
-      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
-      "confidence": "HIGH"
+      "id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "category": "sast",
+      "name": "hardcoded-jwt-secret",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/users.js",
+      "line": 59
     }
-  ]
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
 }

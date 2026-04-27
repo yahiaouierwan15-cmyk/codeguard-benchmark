@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "vulnerabilities": [],
+  "scan": {
+    "scanner": {
+      "id": "bandit",
+      "name": "Bandit"
+    },
+    "type": "sast"
+  }
+}

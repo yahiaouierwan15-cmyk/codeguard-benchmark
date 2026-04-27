@@ -1,0 +1,469 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/dbSchemaChallenge_1.ts",
+      "line": 5
+    },
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/dbSchemaChallenge_3.ts",
+      "line": 11
+    },
+    {
+      "id": "javascript.audit.detect-replaceall-sanitization.detect-replaceall-sanitization",
+      "category": "sast",
+      "name": "detect-replaceall-sanitization",
+      "message": "Detected a call to `replaceAll()` in an attempt to HTML escape the string `tableData[i].description`. Manually sanitizing input through a manually built list can be circumvented in many situations, and it's better to use a well known sanitization library such as `sanitize-html` or `DOMPurify`.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "low",
+      "confidence": "LOW",
+      "file": "data/static/codefixes/restfulXssChallenge_2.ts",
+      "line": 49
+    },
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/unionSqlInjectionChallenge_1.ts",
+      "line": 6
+    },
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/unionSqlInjectionChallenge_3.ts",
+      "line": 10
+    },
+    {
+      "id": "generic.secrets.security.detected-generic-secret.detected-generic-secret",
+      "category": "sast",
+      "name": "detected-generic-secret",
+      "message": "Generic Secret detected",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "data/static/users.yml",
+      "line": 151
+    },
+    {
+      "id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+      "category": "sast",
+      "name": "prototype-pollution-loop",
+      "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+      "cwe": "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "frontend/src/hacking-instructor/helpers/helpers.ts",
+      "line": 49
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.weak-hash-md5-sha1-js",
+      "category": "sast",
+      "name": "weak-hash-md5-sha1-js",
+      "message": "MD5 and SHA1 are cryptographically broken and must not be used for password hashing. Use bcrypt, argon2, or scrypt instead.\n",
+      "cwe": "CWE-327",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "lib/insecurity.ts",
+      "line": 43
+    },
+    {
+      "id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "category": "sast",
+      "name": "hardcoded-jwt-secret",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "lib/insecurity.ts",
+      "line": 56
+    },
+    {
+      "id": "javascript.lang.security.audit.hardcoded-hmac-key.hardcoded-hmac-key",
+      "category": "sast",
+      "name": "hardcoded-hmac-key",
+      "message": "Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "lib/insecurity.ts",
+      "line": 152
+    },
+    {
+      "id": "javascript.express.security.audit.express-detect-notevil-usage.express-detect-notevil-usage",
+      "category": "sast",
+      "name": "express-detect-notevil-usage",
+      "message": "Detected usage of the `notevil` package, which is unmaintained and has vulnerabilities. Using any sort of `eval()` functionality can be very dangerous, but if you must, the `eval` package is an up to date alternative. Be sure that only trusted input reaches an `eval()` function.",
+      "cwe": "CWE-1104: Use of Unmaintained Third Party Components",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "routes/b2bOrder.ts",
+      "line": 23
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
+      "category": "sast",
+      "name": "eval-dynamic-string-js",
+      "message": "eval() called with a non-literal expression. If the argument can be influenced by user input, this is a critical code injection vulnerability. Remove eval() or replace with JSON.parse() / a safe expression parser.\n",
+      "cwe": "CWE-95",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/captcha.ts",
+      "line": 22
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.timing-attack-password-compare",
+      "category": "sast",
+      "name": "timing-attack-password-compare",
+      "message": "Password/hash comparison using === is vulnerable to timing attacks. Use a constant-time comparison function like crypto.timingSafeEqual() or bcrypt.compare().\n",
+      "cwe": "CWE-208",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/changePassword.ts",
+      "line": 54
+    },
+    {
+      "id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "category": "sast",
+      "name": "raw-html-format",
+      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/chatbot.ts",
+      "line": 205
+    },
+    {
+      "id": "javascript.express.security.audit.remote-property-injection.remote-property-injection",
+      "category": "sast",
+      "name": "remote-property-injection",
+      "message": "Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype. Use literal values for object properties.",
+      "cwe": "CWE-522: Insufficiently Protected Credentials",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "routes/currentUser.ts",
+      "line": 31
+    },
+    {
+      "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",
+      "category": "sast",
+      "name": "express-res-sendfile",
+      "message": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.",
+      "cwe": "CWE-73: External Control of File Name or Path",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/fileServer.ts",
+      "line": 33
+    },
+    {
+      "id": "javascript.express.security.audit.express-libxml-vm-noent.express-libxml-vm-noent",
+      "category": "sast",
+      "name": "express-libxml-vm-noent",
+      "message": "Detected use of parseXml() function with the `noent` field set to `true`. This can lead to an XML External Entities (XXE) attack if untrusted data is passed into it.",
+      "cwe": "CWE-611: Improper Restriction of XML External Entity Reference",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "routes/fileUpload.ts",
+      "line": 83
+    },
+    {
+      "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",
+      "category": "sast",
+      "name": "express-res-sendfile",
+      "message": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.",
+      "cwe": "CWE-73: External Control of File Name or Path",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/keyServer.ts",
+      "line": 14
+    },
+    {
+      "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",
+      "category": "sast",
+      "name": "express-res-sendfile",
+      "message": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.",
+      "cwe": "CWE-73: External Control of File Name or Path",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/logfileServer.ts",
+      "line": 14
+    },
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/login.ts",
+      "line": 34
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.timing-attack-password-compare",
+      "category": "sast",
+      "name": "timing-attack-password-compare",
+      "message": "Password/hash comparison using === is vulnerable to timing attacks. Use a constant-time comparison function like crypto.timingSafeEqual() or bcrypt.compare().\n",
+      "cwe": "CWE-208",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/login.ts",
+      "line": 60
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.timing-attack-password-compare",
+      "category": "sast",
+      "name": "timing-attack-password-compare",
+      "message": "Password/hash comparison using === is vulnerable to timing attacks. Use a constant-time comparison function like crypto.timingSafeEqual() or bcrypt.compare().\n",
+      "cwe": "CWE-208",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/login.ts",
+      "line": 65
+    },
+    {
+      "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",
+      "category": "sast",
+      "name": "express-res-sendfile",
+      "message": "The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.",
+      "cwe": "CWE-73: External Control of File Name or Path",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/quarantineServer.ts",
+      "line": 14
+    },
+    {
+      "id": "javascript.express.security.audit.express-open-redirect.express-open-redirect",
+      "category": "sast",
+      "name": "express-open-redirect",
+      "message": "The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.",
+      "cwe": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "routes/redirect.ts",
+      "line": 19
+    },
+    {
+      "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+      "category": "sast",
+      "name": "express-sequelize-injection",
+      "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/search.ts",
+      "line": 23
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.mongodb-where-concat",
+      "category": "sast",
+      "name": "mongodb-where-concat",
+      "message": "MongoDB $where clause built with string concatenation \u2014 NoSQL injection risk. Use typed query operators instead of $where.\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/showProductReviews.ts",
+      "line": 36
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.mongodb-where-template-literal",
+      "category": "sast",
+      "name": "mongodb-where-template-literal",
+      "message": "MongoDB $where clause uses a template literal \u2014 any interpolated variable enables arbitrary JavaScript injection into the MongoDB query engine. Replace $where with typed query operators ($eq, $gt, $lt) and validate inputs.\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/trackOrder.ts",
+      "line": 18
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
+      "category": "sast",
+      "name": "eval-dynamic-string-js",
+      "message": "eval() called with a non-literal expression. If the argument can be influenced by user input, this is a critical code injection vulnerability. Remove eval() or replace with JSON.parse() / a safe expression parser.\n",
+      "cwe": "CWE-95",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/userProfile.ts",
+      "line": 62
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.timing-attack-password-compare",
+      "category": "sast",
+      "name": "timing-attack-password-compare",
+      "message": "Password/hash comparison using === is vulnerable to timing attacks. Use a constant-time comparison function like crypto.timingSafeEqual() or bcrypt.compare().\n",
+      "cwe": "CWE-208",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/verify.ts",
+      "line": 23
+    },
+    {
+      "id": "javascript.lang.security.audit.unknown-value-with-script-tag.unknown-value-with-script-tag",
+      "category": "sast",
+      "name": "unknown-value-with-script-tag",
+      "message": "Cannot determine what 'subs' is and it is used with a '<script>' tag. This could be susceptible to cross-site scripting (XSS). Ensure 'subs' is not externally controlled, or sanitize this data.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "routes/videoHandler.ts",
+      "line": 58
+    },
+    {
+      "id": "javascript.lang.security.audit.unknown-value-with-script-tag.unknown-value-with-script-tag",
+      "category": "sast",
+      "name": "unknown-value-with-script-tag",
+      "message": "Cannot determine what 'subs' is and it is used with a '<script>' tag. This could be susceptible to cross-site scripting (XSS). Ensure 'subs' is not externally controlled, or sanitize this data.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "routes/videoHandler.ts",
+      "line": 71
+    },
+    {
+      "id": "javascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring",
+      "category": "sast",
+      "name": "unsafe-formatstring",
+      "message": "Detected string concatenation with a non-literal variable in a util.format / console.log function. If an attacker injects a format specifier in the string, it will forge the log message. Try to use constant values for the format string.",
+      "cwe": "CWE-134: Use of Externally-Controlled Format String",
+      "severity": "low",
+      "confidence": "LOW",
+      "file": "server.ts",
+      "line": 155
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.cors-wildcard",
+      "category": "sast",
+      "name": "cors-wildcard",
+      "message": "CORS wildcard origin (*) allows any website to make authenticated requests to your API. With credentials enabled, this is a critical vulnerability. Specify exact trusted origins: cors({ origin: \"https://yourdomain.com\" }).\n",
+      "cwe": "CWE-942",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "server.ts",
+      "line": 182
+    },
+    {
+      "id": "javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+      "category": "sast",
+      "name": "express-check-directory-listing",
+      "message": "Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.",
+      "cwe": "CWE-548: Exposure of Information Through Directory Listing",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "server.ts",
+      "line": 269
+    },
+    {
+      "id": "javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+      "category": "sast",
+      "name": "express-check-directory-listing",
+      "message": "Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.",
+      "cwe": "CWE-548: Exposure of Information Through Directory Listing",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "server.ts",
+      "line": 273
+    },
+    {
+      "id": "javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+      "category": "sast",
+      "name": "express-check-directory-listing",
+      "message": "Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.",
+      "cwe": "CWE-548: Exposure of Information Through Directory Listing",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "server.ts",
+      "line": 277
+    },
+    {
+      "id": "javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+      "category": "sast",
+      "name": "express-check-directory-listing",
+      "message": "Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.",
+      "cwe": "CWE-548: Exposure of Information Through Directory Listing",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "server.ts",
+      "line": 281
+    },
+    {
+      "id": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/promotionVideo.pug",
+      "line": 78
+    },
+    {
+      "id": "trufflehog-JWT",
+      "category": "secrets",
+      "name": "JWT",
+      "message": "Secret detected: JWT",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "test/api/userApiSpec.ts",
+      "line": 302
+    },
+    {
+      "id": "trufflehog-JWT",
+      "category": "secrets",
+      "name": "JWT",
+      "message": "Secret detected: JWT",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "test/server/currentUserSpec.ts",
+      "line": 33
+    },
+    {
+      "id": "trufflehog-PrivateKey",
+      "category": "secrets",
+      "name": "PrivateKey",
+      "message": "Secret detected: PrivateKey",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "lib/insecurity.ts",
+      "line": 23
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.hardcoded-session-secret-js",
+      "category": "sast",
+      "name": "hardcoded-session-secret-js",
+      "message": "Hardcoded session secret detected. Use a cryptographically random secret from an environment variable: process.env.SESSION_SECRET\n",
+      "cwe": "CWE-798",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app.js",
+      "line": 43
+    },
+    {
+      "id": "problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+      "category": "sast",
+      "name": "using-http-server",
+      "message": "Checks for any usage of http servers instead of https servers. Encourages the usage of https protocol instead of http, which does not have TLS and is therefore unencrypted. Using http can lead to man-in-the-middle attacks in which the attacker is able to read sensitive information.",
+      "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "bin/www",
+      "line": 22
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.codeguard.secrets.object-literal-password-js",
+      "category": "sast",
+      "name": "object-literal-password-js",
+      "message": "Hardcoded password in object literal \u2014 never hardcode passwords in source. Use environment variables: password: process.env.DB_PASSWORD\n",
+      "cwe": "CWE-798",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "dummy.js",
+      "line": 10
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.redirect.express-open-redirect",
+      "category": "sast",
+      "name": "express-open-redirect",
+      "message": "res.redirect() with user-controlled URL \u2014 open redirect vulnerability. An attacker can redirect victims to phishing sites. Validate the destination against an allowlist of trusted paths/domains or use relative paths only.\n",
+      "cwe": "CWE-601",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "routes/login.js",
+      "line": 23
+    },
+    {
+      "id": "javascript.express.security.audit.express-open-redirect.express-open-redirect",
+      "category": "sast",
+      "name": "express-open-redirect",
+      "message": "The application redirects to a URL specified by user-supplied input `req` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.",
+      "cwe": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "routes/login.js",
+      "line": 36
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/bought_products.ejs",
+      "line": 26
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/bought_products.ejs",
+      "line": 30
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/content.ejs",
+      "line": 52
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/layout.ejs",
+      "line": 37
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/login.ejs",
+      "line": 17
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/login.ejs",
+      "line": 22
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/product_detail.ejs",
+      "line": 8
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/product_detail.ejs",
+      "line": 10
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/product_detail.ejs",
+      "line": 48
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/product_detail.ejs",
+      "line": 50
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/products.ejs",
+      "line": 16
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/products.ejs",
+      "line": 21
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/search.ejs",
+      "line": 3
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/search.ejs",
+      "line": 23
+    },
+    {
+      "id": "javascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape",
+      "category": "sast",
+      "name": "template-explicit-unescape",
+      "message": "Detected an explicit unescape in an EJS template, using '<%- ... %>' If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need escaping, ensure no external data can reach this location.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "views/search.ejs",
+      "line": 25
+    },
+    {
+      "id": "trufflehog-Postgres",
+      "category": "secrets",
+      "name": "Postgres",
+      "message": "Secret detected: Postgres",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "config.js",
+      "line": 1
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

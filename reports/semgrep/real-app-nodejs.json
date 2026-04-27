@@ -1,68 +1,116 @@
 {
-  "schema_version": "1.0.0",
-  "scanner": {
-    "name": "Semgrep CE"
-  },
+  "version": "15.0.0",
   "vulnerabilities": [
     {
-      "id": "SG-1",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 24,
-      "severity": "High",
-      "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
-      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
-      "confidence": "MEDIUM"
+      "id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+      "category": "sast",
+      "name": "express-check-csurf-middleware-usage",
+      "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+      "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+      "severity": "low",
+      "confidence": "LOW",
+      "file": "src/index.js",
+      "line": 6,
+      "end_line": 6,
+      "owasp": "A01:2021 - Broken Access Control"
     },
     {
-      "id": "SG-2",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "category": "sast",
+      "name": "direct-response-write",
+      "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
+      "line": 24,
+      "end_line": 24,
+      "owasp": "A07:2017 - Cross-Site Scripting (XSS)"
+    },
+    {
+      "id": "javascript.lang.security.detect-child-process.detect-child-process",
+      "category": "sast",
+      "name": "detect-child-process",
+      "message": "Detected calls to child_process from a function argument `req`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "src/routes/tasks.js",
+      "line": 31,
+      "end_line": 31,
+      "owasp": "A01:2017 - Injection"
+    },
+    {
+      "id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "category": "sast",
+      "name": "raw-html-format",
+      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
       "line": 48,
-      "severity": "High",
-      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
-      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
-      "confidence": "MEDIUM"
+      "end_line": 49,
+      "owasp": "A07:2017 - Cross-Site Scripting (XSS)"
     },
     {
-      "id": "SG-3",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
+      "id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+      "category": "sast",
+      "name": "raw-html-format",
+      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
       "line": 49,
-      "severity": "High",
-      "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
-      "rule_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
-      "confidence": "MEDIUM"
+      "end_line": 50,
+      "owasp": "A07:2017 - Cross-Site Scripting (XSS)"
     },
     {
-      "id": "SG-4",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-nodejs/src/routes/tasks.js",
-      "line": 53,
-      "severity": "High",
+      "id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "category": "sast",
+      "name": "direct-response-write",
       "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
-      "rule_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "src/routes/tasks.js",
+      "line": 53,
+      "end_line": 53,
+      "owasp": "A07:2017 - Cross-Site Scripting (XSS)"
     },
     {
-      "id": "SG-5",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
+      "id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "category": "sast",
+      "name": "hardcoded-jwt-secret",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/users.js",
       "line": 24,
-      "severity": "High",
-      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
-      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
-      "confidence": "HIGH"
+      "end_line": 24,
+      "owasp": "A07:2021 - Identification and Authentication Failures"
     },
     {
-      "id": "SG-6",
-      "cwe": "CWE-798",
-      "file": "apps/real-app-nodejs/src/routes/users.js",
+      "id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
+      "category": "sast",
+      "name": "hardcoded-jwt-secret",
+      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).",
+      "cwe": "CWE-798: Use of Hard-coded Credentials",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "src/routes/users.js",
       "line": 59,
-      "severity": "High",
-      "message": "A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f",
-      "rule_id": "javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret",
-      "confidence": "HIGH"
+      "end_line": 59,
+      "owasp": "A07:2021 - Identification and Authentication Failures"
     }
-  ]
+  ],
+  "scan": {
+    "scanner": {
+      "id": "semgrep",
+      "name": "Semgrep CE"
+    },
+    "type": "sast"
+  }
 }

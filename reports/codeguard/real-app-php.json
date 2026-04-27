@@ -1,68 +1,73 @@
 {
-  "schema_version": "1.0.0",
-  "scanner": {
-    "name": "CodeGuard"
-  },
+  "version": "3.0.0",
   "vulnerabilities": [
     {
-      "id": "SG-1",
-      "cwe": "CWE-89",
-      "file": "apps/real-app-php/admin.php",
-      "line": 47,
-      "severity": "Critical",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
-      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "confidence": "MEDIUM"
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.inclusion.php-include-superglobal",
+      "category": "sast",
+      "name": "php-include-superglobal",
+      "message": "PHP include/require with user-controlled path \u2014 Local/Remote File Inclusion (LFI/RFI). An attacker can include arbitrary files from the server or (if allow_url_include=On) remote servers. Never pass user input directly to include/require. Use a whitelist of allowed filenames: $allowed = ['home', 'about']; if (in_array($page, $allowed)) include $page . '.php';\n",
+      "cwe": "CWE-98",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "admin.php",
+      "line": 5
     },
     {
-      "id": "SG-2",
-      "cwe": "CWE-918",
-      "file": "apps/real-app-php/admin.php",
-      "line": 54,
-      "severity": "High",
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "admin.php",
+      "line": 47
+    },
+    {
+      "id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "category": "sast",
+      "name": "tainted-filename",
       "message": "File name based on user input risks server-side request forgery.",
-      "rule_id": "php.lang.security.injection.tainted-filename.tainted-filename",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "admin.php",
+      "line": 54
     },
     {
-      "id": "SG-3",
-      "cwe": "CWE-78",
-      "file": "apps/real-app-php/admin.php",
-      "line": 59,
-      "severity": "High",
-      "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
-      "rule_id": "php.lang.security.injection.tainted-exec.tainted-exec",
-      "confidence": "MEDIUM"
+      "id": "php.lang.security.exec-use.exec-use",
+      "category": "sast",
+      "name": "exec-use",
+      "message": "Executing non-constant commands. This can lead to command injection.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "admin.php",
+      "line": 59
     },
     {
-      "id": "SG-4",
-      "cwe": "CWE-94",
-      "file": "apps/real-app-php/admin.php",
-      "line": 59,
-      "severity": "Critical",
-      "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
-      "rule_id": "php.lang.security.tainted-exec.tainted-exec",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-5",
-      "cwe": "CWE-79",
-      "file": "apps/real-app-php/admin.php",
-      "line": 61,
-      "severity": "Critical",
-      "message": "`Echo`ing user input risks cross-site scripting vulnerability. You should use `htmlentities()` when showing data to users.",
-      "rule_id": "php.lang.security.injection.echoed-request.echoed-request",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-6",
-      "cwe": "CWE-89",
-      "file": "apps/real-app-php/submit.php",
-      "line": 33,
-      "severity": "Critical",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data",
-      "rule_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "confidence": "MEDIUM"
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "submit.php",
+      "line": 33
     }
-  ]
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
 }

@@ -1,0 +1,194 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "python.django.security.injection.command.command-injection-os-system.command-injection-os-system",
+      "category": "sast",
+      "name": "command-injection-os-system",
+      "message": "Request data detected in os.system. This could be vulnerable to a command injection and should be avoided. If this must be done, use the 'subprocess' module instead and pass the arguments as a list. See https://owasp.org/www-community/attacks/Command_Injection for more information.",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 8
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.subprocess-shell-user-input",
+      "category": "sast",
+      "name": "subprocess-shell-user-input",
+      "message": "subprocess called with shell=True \u2014 if the command string includes user input, this allows OS command injection. Use shell=False with a list of arguments, or validate/escape input with shlex.quote().\n",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 14
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.subprocess-shell-user-input",
+      "category": "sast",
+      "name": "subprocess-shell-user-input",
+      "message": "subprocess called with shell=True \u2014 if the command string includes user input, this allows OS command injection. Use shell=False with a list of arguments, or validate/escape input with shlex.quote().\n",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 19
+    },
+    {
+      "id": "python.lang.security.deserialization.pickle.avoid-pickle",
+      "category": "sast",
+      "name": "avoid-pickle",
+      "message": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.",
+      "cwe": "CWE-502: Deserialization of Untrusted Data",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "vulnpy/trigger/deserialization.py",
+      "line": 9
+    },
+    {
+      "id": "python.django.security.injection.path-traversal.path-traversal-open.path-traversal-open",
+      "category": "sast",
+      "name": "path-traversal-open",
+      "message": "Found request data in a call to 'open'. Ensure the request data is validated or sanitized, otherwise it could result in path traversal attacks and therefore sensitive data being leaked. To mitigate, consider using os.path.abspath or os.path.realpath or the pathlib library.",
+      "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/path_traversal.py",
+      "line": 6
+    },
+    {
+      "id": "python.django.security.injection.path-traversal.path-traversal-open.path-traversal-open",
+      "category": "sast",
+      "name": "path-traversal-open",
+      "message": "Found request data in a call to 'open'. Ensure the request data is validated or sanitized, otherwise it could result in path traversal attacks and therefore sensitive data being leaked. To mitigate, consider using os.path.abspath or os.path.realpath or the pathlib library.",
+      "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/path_traversal.py",
+      "line": 13
+    },
+    {
+      "id": "python.django.security.injection.sql.sql-injection-using-db-cursor-execute.sql-injection-db-cursor-execute",
+      "category": "sast",
+      "name": "sql-injection-db-cursor-execute",
+      "message": "User-controlled data from a request is passed to 'execute()'. This could lead to a SQL injection and therefore protected information could be leaked. Instead, use django's QuerySets, which are built with query parameterization and therefore not vulnerable to sql injection. For example, you could use `Entry.objects.filter(date=2006)`.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/sqli.py",
+      "line": 7
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.sql-variable-concat-python",
+      "category": "sast",
+      "name": "sql-variable-concat-python",
+      "message": "SQL query built via string concatenation then passed to execute() \u2014 SQL injection risk. Use parameterized queries with placeholder values.\n",
+      "cwe": "CWE-89",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/sqli.py",
+      "line": 10
+    },
+    {
+      "id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as SQLAlchemy which will protect your queries.",
+      "cwe": "CWE-704: Incorrect Type Conversion or Cast",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/sqli.py",
+      "line": 19
+    },
+    {
+      "id": "python.flask.security.injection.ssrf-requests.ssrf-requests",
+      "category": "sast",
+      "name": "ssrf-requests",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer security in the proxied request.",
+      "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/ssrf.py",
+      "line": 8
+    },
+    {
+      "id": "bandit-B310",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "cwe": "CWE-22",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/ssrf.py",
+      "line": 15
+    },
+    {
+      "id": "bandit-B307",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/unsafe_code_exec.py",
+      "line": 7
+    },
+    {
+      "id": "bandit-B102",
+      "category": "sast",
+      "name": "exec_used",
+      "message": "Use of exec detected.",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/unsafe_code_exec.py",
+      "line": 13
+    },
+    {
+      "id": "python.django.security.injection.raw-html-format.raw-html-format",
+      "category": "sast",
+      "name": "raw-html-format",
+      "message": "Detected user input flowing into a manually constructed HTML string. You may be accidentally bypassing secure methods of rendering HTML by manually constructing HTML and this could create a cross-site scripting vulnerability, which could let attackers steal sensitive user data. To be sure this is safe, check that the HTML is rendered safely. Otherwise, use templates (`django.shortcuts.render`) which will safely render HTML instead.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/xss.py",
+      "line": 7
+    },
+    {
+      "id": "python.flask.security.audit.directly-returned-format-string.directly-returned-format-string",
+      "category": "sast",
+      "name": "directly-returned-format-string",
+      "message": "Detected Flask route directly returning a formatted string. This is subject to cross-site scripting if user input can reach the string. Consider using the template engine instead and rendering pages with 'render_template()'.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/xss.py",
+      "line": 13
+    },
+    {
+      "id": "bandit-B506",
+      "category": "sast",
+      "name": "yaml_load",
+      "message": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+      "cwe": "CWE-20",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/deserialization.py",
+      "line": 15
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

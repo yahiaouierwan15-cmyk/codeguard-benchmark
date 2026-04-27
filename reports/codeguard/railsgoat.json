@@ -1,0 +1,326 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "ruby.rails.security.brakeman.check-unscoped-find.check-unscoped-find",
+      "category": "sast",
+      "name": "check-unscoped-find",
+      "message": "Found an unscoped `find(...)` with user-controllable input. If the ActiveRecord model being searched against is sensitive, this may lead to Insecure Direct Object Reference (IDOR) behavior and allow users to read arbitrary records. Scope the find to the current user, e.g. `current_user.accounts.find(params[:id])`.",
+      "cwe": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/admin_controller.rb",
+      "line": 28
+    },
+    {
+      "id": "ruby.rails.security.brakeman.check-unscoped-find.check-unscoped-find",
+      "category": "sast",
+      "name": "check-unscoped-find",
+      "message": "Found an unscoped `find(...)` with user-controllable input. If the ActiveRecord model being searched against is sensitive, this may lead to Insecure Direct Object Reference (IDOR) behavior and allow users to read arbitrary records. Scope the find to the current user, e.g. `current_user.accounts.find(params[:id])`.",
+      "cwe": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/admin_controller.rb",
+      "line": 34
+    },
+    {
+      "id": "ruby.rails.security.brakeman.check-unsafe-reflection.check-unsafe-reflection",
+      "category": "sast",
+      "name": "check-unsafe-reflection",
+      "message": "Found user-controllable input to Ruby reflection functionality. This allows a remote user to influence runtime behavior, up to and including arbitrary remote code execution. Do not provide user-controllable input to reflection functionality. Do not call symbol conversion on user-controllable input.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/api/v1/mobile_controller.rb",
+      "line": 10
+    },
+    {
+      "id": "ruby.rails.security.brakeman.check-unsafe-reflection.check-unsafe-reflection",
+      "category": "sast",
+      "name": "check-unsafe-reflection",
+      "message": "Found user-controllable input to Ruby reflection functionality. This allows a remote user to influence runtime behavior, up to and including arbitrary remote code execution. Do not provide user-controllable input to reflection functionality. Do not call symbol conversion on user-controllable input.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/api/v1/mobile_controller.rb",
+      "line": 17
+    },
+    {
+      "id": "ruby.lang.security.weak-hashes-sha1.weak-hashes-sha1",
+      "category": "sast",
+      "name": "weak-hashes-sha1",
+      "message": "Should not use SHA1 to generate hashes. There is a proven SHA1 hash collision by Google, which could lead to vulnerabilities. Use SHA256, SHA3 or other hashing functions instead.",
+      "cwe": "CWE-328: Use of Weak Hash",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/api/v1/users_controller.rb",
+      "line": 42
+    },
+    {
+      "id": "ruby.rails.security.brakeman.check-unsafe-reflection.check-unsafe-reflection",
+      "category": "sast",
+      "name": "check-unsafe-reflection",
+      "message": "Found user-controllable input to Ruby reflection functionality. This allows a remote user to influence runtime behavior, up to and including arbitrary remote code execution. Do not provide user-controllable input to reflection functionality. Do not call symbol conversion on user-controllable input.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/benefit_forms_controller.rb",
+      "line": 12
+    },
+    {
+      "id": "ruby.lang.security.bad-deserialization.bad-deserialization",
+      "category": "sast",
+      "name": "bad-deserialization",
+      "message": "Checks for unsafe deserialization. Objects in Ruby can be serialized into strings, then later loaded from strings. However, uses of load and object_load can cause remote code execution. Loading user input with MARSHAL or CSV can potentially be dangerous. Use JSON in a secure fashion instead.",
+      "cwe": "CWE-502: Deserialization of Untrusted Data",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/password_resets_controller.rb",
+      "line": 6
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.avoid-html-safe.avoid-html-safe",
+      "category": "sast",
+      "name": "avoid-html-safe",
+      "message": "'html_safe()' does not make the supplied string safe. 'html_safe()' bypasses HTML escaping. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/controllers/password_resets_controller.rb",
+      "line": 36
+    },
+    {
+      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "category": "sast",
+      "name": "weak-hashes-md5",
+      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+      "cwe": "CWE-328: Use of Weak Hash",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/password_resets_controller.rb",
+      "line": 48
+    },
+    {
+      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "category": "sast",
+      "name": "weak-hashes-md5",
+      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+      "cwe": "CWE-328: Use of Weak Hash",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/password_resets_controller.rb",
+      "line": 57
+    },
+    {
+      "id": "ruby.rails.security.brakeman.check-unscoped-find.check-unscoped-find",
+      "category": "sast",
+      "name": "check-unscoped-find",
+      "message": "Found an unscoped `find(...)` with user-controllable input. If the ActiveRecord model being searched against is sensitive, this may lead to Insecure Direct Object Reference (IDOR) behavior and allow users to read arbitrary records. Scope the find to the current user, e.g. `current_user.accounts.find(params[:id])`.",
+      "cwe": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/pay_controller.rb",
+      "line": 29
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.avoid-redirect.avoid-redirect",
+      "category": "sast",
+      "name": "avoid-redirect",
+      "message": "When a redirect uses user input, a malicious user can spoof a website under a trusted URL or access restricted parts of a site. When using user-supplied values, sanitize the value before using it for the redirect.",
+      "cwe": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/sessions_controller.rb",
+      "line": 26
+    },
+    {
+      "id": "ruby.rails.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as ActiveRecord which will protect your queries.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/users_controller.rb",
+      "line": 29
+    },
+    {
+      "id": "ruby.lang.security.model-attr-accessible.model-attr-accessible",
+      "category": "sast",
+      "name": "model-attr-accessible",
+      "message": "Checks for dangerous permitted attributes that can lead to mass assignment vulnerabilities. Query parameters allowed using permit and attr_accessible are checked for allowance of dangerous attributes admin, banned, role, and account_id. Also checks for usages of params.permit!, which allows everything. Fix: don't allow admin, banned, role, and account_id using permit or attr_accessible.",
+      "cwe": "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "app/controllers/users_controller.rb",
+      "line": 55
+    },
+    {
+      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "category": "sast",
+      "name": "weak-hashes-md5",
+      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+      "cwe": "CWE-328: Use of Weak Hash",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/models/user.rb",
+      "line": 45
+    },
+    {
+      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "category": "sast",
+      "name": "weak-hashes-md5",
+      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+      "cwe": "CWE-328: Use of Weak Hash",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/models/user.rb",
+      "line": 55
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.unquoted-attribute.unquoted-attribute",
+      "category": "sast",
+      "name": "unquoted-attribute",
+      "message": "Detected a unquoted template variable as an attribute. If unquoted, a malicious actor could inject custom JavaScript handlers. To fix this, add quotes around the template expression, like this: \"<%= expr %>\".",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/admin/analytics.html.erb",
+      "line": 9
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.avoid-raw.avoid-raw",
+      "category": "sast",
+      "name": "avoid-raw",
+      "message": "'raw' renders raw HTML, as the name implies. This means that normal HTML escaping is bypassed. If user data can be controlled here, this exposes your application to cross-site scripting (XSS). If you need to do this, be sure to correctly sanitize the data using a library such as DOMPurify.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/layouts/application.html.erb",
+      "line": 427
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.var-in-href.var-in-href",
+      "category": "sast",
+      "name": "var-in-href",
+      "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href='/<%= link =>'. You may also consider setting the Content Security Policy (CSP) header.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/layouts/shared/_header.html.erb",
+      "line": 7
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.avoid-html-safe.avoid-html-safe",
+      "category": "sast",
+      "name": "avoid-html-safe",
+      "message": "'html_safe' renders raw HTML. This means that normal HTML escaping is bypassed. If user data can be controlled here, this exposes your application to cross-site scripting (XSS). If you need to do this, be sure to correctly sanitize the data using a library such as DOMPurify.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/layouts/shared/_header.html.erb",
+      "line": 47
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.var-in-href.var-in-href",
+      "category": "sast",
+      "name": "var-in-href",
+      "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href='/<%= link =>'. You may also consider setting the Content Security Policy (CSP) header.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/layouts/shared/_header.html.erb",
+      "line": 75
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.avoid-html-safe.avoid-html-safe",
+      "category": "sast",
+      "name": "avoid-html-safe",
+      "message": "'html_safe' renders raw HTML. This means that normal HTML escaping is bypassed. If user data can be controlled here, this exposes your application to cross-site scripting (XSS). If you need to do this, be sure to correctly sanitize the data using a library such as DOMPurify.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/messages/index.html.erb",
+      "line": 167
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.avoid-html-safe.avoid-html-safe",
+      "category": "sast",
+      "name": "avoid-html-safe",
+      "message": "'html_safe' renders raw HTML. This means that normal HTML escaping is bypassed. If user data can be controlled here, this exposes your application to cross-site scripting (XSS). If you need to do this, be sure to correctly sanitize the data using a library such as DOMPurify.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/paid_time_off/index.html.erb",
+      "line": 210
+    },
+    {
+      "id": "ruby.rails.security.audit.xss.templates.avoid-html-safe.avoid-html-safe",
+      "category": "sast",
+      "name": "avoid-html-safe",
+      "message": "'html_safe' renders raw HTML. This means that normal HTML escaping is bypassed. If user data can be controlled here, this exposes your application to cross-site scripting (XSS). If you need to do this, be sure to correctly sanitize the data using a library such as DOMPurify.",
+      "cwe": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app/views/users/account_settings.html.erb",
+      "line": 81
+    },
+    {
+      "id": "ruby.rails.security.audit.detailed-exceptions.detailed-exceptions",
+      "category": "sast",
+      "name": "detailed-exceptions",
+      "message": "Found that the setting for providing detailed exception reports in Rails is set to true. This can lead to information exposure, where sensitive system or internal information is displayed to the end user. Instead, turn this setting off.",
+      "cwe": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "config/environments/development.rb",
+      "line": 11
+    },
+    {
+      "id": "ruby.rails.security.audit.detailed-exceptions.detailed-exceptions",
+      "category": "sast",
+      "name": "detailed-exceptions",
+      "message": "Found that the setting for providing detailed exception reports in Rails is set to true. This can lead to information exposure, where sensitive system or internal information is displayed to the end user. Instead, turn this setting off.",
+      "cwe": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "config/environments/mysql.rb",
+      "line": 11
+    },
+    {
+      "id": "ruby.rails.security.audit.detailed-exceptions.detailed-exceptions",
+      "category": "sast",
+      "name": "detailed-exceptions",
+      "message": "Found that the setting for providing detailed exception reports in Rails is set to true. This can lead to information exposure, where sensitive system or internal information is displayed to the end user. Instead, turn this setting off.",
+      "cwe": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "config/environments/openshift.rb",
+      "line": 11
+    },
+    {
+      "id": "ruby.rails.security.audit.detailed-exceptions.detailed-exceptions",
+      "category": "sast",
+      "name": "detailed-exceptions",
+      "message": "Found that the setting for providing detailed exception reports in Rails is set to true. This can lead to information exposure, where sensitive system or internal information is displayed to the end user. Instead, turn this setting off.",
+      "cwe": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "config/environments/test.rb",
+      "line": 16
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "vulnerabilities": [
+    {
+      "id": "B201",
+      "category": "sast",
+      "name": "flask_debug_true",
+      "message": "A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.",
+      "cwe": "CWE-94",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app.py",
+      "line": 20,
+      "end_line": 34
+    },
+    {
+      "id": "B105",
+      "category": "sast",
+      "name": "hardcoded_password_string",
+      "message": "Possible hardcoded password: 'blogapi-secret-key-do-not-share-2024'",
+      "cwe": "CWE-259",
+      "severity": "low",
+      "confidence": "MEDIUM",
+      "file": "routes/auth.py",
+      "line": 11,
+      "end_line": 55
+    },
+    {
+      "id": "B324",
+      "category": "sast",
+      "name": "hashlib",
+      "message": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "cwe": "CWE-327",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/auth.py",
+      "line": 27,
+      "end_line": 43
+    },
+    {
+      "id": "B324",
+      "category": "sast",
+      "name": "hashlib",
+      "message": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "cwe": "CWE-327",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "routes/auth.py",
+      "line": 50,
+      "end_line": 43
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "routes/posts.py",
+      "line": 24,
+      "end_line": 67
+    },
+    {
+      "id": "B404",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "cwe": "CWE-78",
+      "severity": "low",
+      "confidence": "HIGH",
+      "file": "utils/files.py",
+      "line": 5,
+      "end_line": 17
+    },
+    {
+      "id": "B602",
+      "category": "sast",
+      "name": "subprocess_popen_with_shell_equals_true",
+      "message": "subprocess call with shell=True identified, security issue.",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "utils/files.py",
+      "line": 25,
+      "end_line": 76
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "bandit",
+      "name": "Bandit"
+    },
+    "type": "sast"
+  }
+}

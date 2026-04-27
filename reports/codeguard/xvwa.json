@@ -1,0 +1,161 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "php.lang.security.unlink-use.unlink-use",
+      "category": "sast",
+      "name": "unlink-use",
+      "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
+      "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "setup/home.php",
+      "line": 34
+    },
+    {
+      "id": "php.lang.security.exec-use.exec-use",
+      "category": "sast",
+      "name": "exec-use",
+      "message": "Executing non-constant commands. This can lead to command injection.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "vulnerabilities/cmdi/home.php",
+      "line": 38
+    },
+    {
+      "id": "php.lang.security.exec-use.exec-use",
+      "category": "sast",
+      "name": "exec-use",
+      "message": "Executing non-constant commands. This can lead to command injection.",
+      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "vulnerabilities/cmdi/home.php",
+      "line": 42
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.traversal.include-indirect-php",
+      "category": "sast",
+      "name": "include-indirect-php",
+      "message": "User input stored in variable then used in file inclusion \u2014 path traversal / LFI risk. Never pass user input to include/require or file operations without strict validation.\n",
+      "cwe": "CWE-98",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnerabilities/fi/home.php",
+      "line": 35
+    },
+    {
+      "id": "php.lang.security.eval-use.eval-use",
+      "category": "sast",
+      "name": "eval-use",
+      "message": "Evaluating non-constant commands. This can lead to command injection.",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "vulnerabilities/php_object_injection/home.php",
+      "line": 32
+    },
+    {
+      "id": "php.lang.security.unserialize-use.unserialize-use",
+      "category": "sast",
+      "name": "unserialize-use",
+      "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution. Consider using JSON or structured data approaches (e.g. Google Protocol Buffers).",
+      "cwe": "CWE-502: Deserialization of Untrusted Data",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "vulnerabilities/php_object_injection/home.php",
+      "line": 38
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.xss.php-echo-superglobal-direct",
+      "category": "sast",
+      "name": "php-echo-superglobal-direct",
+      "message": "Reflected XSS \u2014 user input from $_GET/$_POST/$_REQUEST echoed directly without HTML encoding. Always apply htmlspecialchars($value, ENT_QUOTES, 'UTF-8') before outputting user-controlled data in HTML context.\n",
+      "cwe": "CWE-79",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnerabilities/reflected_xss/home.php",
+      "line": 32
+    },
+    {
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnerabilities/sqli/home.php",
+      "line": 56
+    },
+    {
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnerabilities/sqli/home.php",
+      "line": 60
+    },
+    {
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnerabilities/sqli_blind/home.php",
+      "line": 54
+    },
+    {
+      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "vulnerabilities/sqli_blind/home.php",
+      "line": 61
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.traversal.php-file-get-contents-superglobal",
+      "category": "sast",
+      "name": "php-file-get-contents-superglobal",
+      "message": "PHP file read function called with user-controlled path \u2014 path traversal risk. Validate and sanitize file paths with realpath() and assert the result starts with the expected base directory.\n",
+      "cwe": "CWE-22",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnerabilities/ssrf_xspa/home.php",
+      "line": 33
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.xss.php-echo-superglobal-direct",
+      "category": "sast",
+      "name": "php-echo-superglobal-direct",
+      "message": "Reflected XSS \u2014 user input from $_GET/$_POST/$_REQUEST echoed directly without HTML encoding. Always apply htmlspecialchars($value, ENT_QUOTES, 'UTF-8') before outputting user-controlled data in HTML context.\n",
+      "cwe": "CWE-79",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnerabilities/ssrf_xspa/home.php",
+      "line": 36
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

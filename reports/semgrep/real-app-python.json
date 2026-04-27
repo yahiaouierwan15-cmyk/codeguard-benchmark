@@ -1,98 +1,129 @@
 {
-  "schema_version": "1.0.0",
-  "scanner": {
-    "name": "Semgrep CE"
-  },
+  "version": "15.0.0",
   "vulnerabilities": [
     {
-      "id": "SG-1",
-      "cwe": "CWE-489",
-      "file": "apps/real-app-python/app.py",
-      "line": 20,
-      "severity": "High",
+      "id": "python.flask.security.audit.debug-enabled.debug-enabled",
+      "category": "sast",
+      "name": "debug-enabled",
       "message": "Detected Flask app with debug=True. Do not deploy to production with this flag enabled as it will leak sensitive information. Instead, consider using Flask configuration variables or setting 'debug' using system environment variables.",
-      "rule_id": "python.flask.security.audit.debug-enabled.debug-enabled",
-      "confidence": "HIGH"
+      "cwe": "CWE-489: Active Debug Code",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "app.py",
+      "line": 20,
+      "end_line": 20,
+      "owasp": "A"
     },
     {
-      "id": "SG-2",
-      "cwe": "CWE-327",
-      "file": "apps/real-app-python/routes/auth.py",
-      "line": 27,
-      "severity": "High",
-      "message": "Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use SHA256 or SHA3 instead.",
-      "rule_id": "python.lang.security.insecure-hash-algorithms-md5.insecure-hash-algorithm-md5",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-3",
-      "cwe": "CWE-327",
-      "file": "apps/real-app-python/routes/auth.py",
-      "line": 27,
-      "severity": "High",
+      "id": "python.lang.security.audit.md5-used-as-password.md5-used-as-password",
+      "category": "sast",
+      "name": "md5-used-as-password",
       "message": "It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because it can be cracked by an attacker in a short amount of time. Use a suitable password hashing function such as scrypt. You can use `hashlib.scrypt`.",
-      "rule_id": "python.lang.security.audit.md5-used-as-password.md5-used-as-password",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/auth.py",
+      "line": 27,
+      "end_line": 27,
+      "owasp": "A03:2017 - Sensitive Data Exposure"
     },
     {
-      "id": "SG-4",
-      "cwe": "CWE-327",
-      "file": "apps/real-app-python/routes/auth.py",
-      "line": 50,
-      "severity": "High",
-      "message": "Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use SHA256 or SHA3 instead.",
-      "rule_id": "python.lang.security.insecure-hash-algorithms-md5.insecure-hash-algorithm-md5",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-5",
-      "cwe": "CWE-327",
-      "file": "apps/real-app-python/routes/auth.py",
-      "line": 50,
-      "severity": "High",
+      "id": "python.lang.security.audit.md5-used-as-password.md5-used-as-password",
+      "category": "sast",
+      "name": "md5-used-as-password",
       "message": "It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because it can be cracked by an attacker in a short amount of time. Use a suitable password hashing function such as scrypt. You can use `hashlib.scrypt`.",
-      "rule_id": "python.lang.security.audit.md5-used-as-password.md5-used-as-password",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/auth.py",
+      "line": 50,
+      "end_line": 50,
+      "owasp": "A03:2017 - Sensitive Data Exposure"
     },
     {
-      "id": "SG-6",
-      "cwe": "CWE-704",
-      "file": "apps/real-app-python/routes/posts.py",
+      "id": "python.django.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using the Django object-relational mappers (ORM) instead of raw SQL queries.",
+      "cwe": "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "routes/posts.py",
       "line": 24,
-      "severity": "Critical",
-      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available",
-      "rule_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
-      "confidence": "MEDIUM"
+      "end_line": 24,
+      "owasp": "A08:2021 - Software and Data Integrity Failures"
     },
     {
-      "id": "SG-7",
-      "cwe": "CWE-918",
-      "file": "apps/real-app-python/routes/posts.py",
-      "line": 45,
-      "severity": "Critical",
-      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
-      "rule_id": "python.django.security.injection.ssrf.ssrf-injection-requests.ssrf-injection-requests",
-      "confidence": "MEDIUM"
+      "id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "category": "sast",
+      "name": "tainted-sql-string",
+      "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as SQLAlchemy which will protect your queries.",
+      "cwe": "CWE-704: Incorrect Type Conversion or Cast",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "routes/posts.py",
+      "line": 24,
+      "end_line": 24,
+      "owasp": "A01:2017 - Injection"
     },
     {
-      "id": "SG-8",
-      "cwe": "CWE-918",
-      "file": "apps/real-app-python/routes/posts.py",
-      "line": 47,
-      "severity": "Critical",
-      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer secur",
-      "rule_id": "python.flask.security.injection.ssrf-requests.ssrf-requests",
-      "confidence": "MEDIUM"
-    },
-    {
-      "id": "SG-9",
-      "cwe": "CWE-78",
-      "file": "apps/real-app-python/utils/files.py",
+      "id": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "category": "sast",
+      "name": "sqlalchemy-execute-raw-query",
+      "message": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.",
+      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "severity": "high",
+      "confidence": "LOW",
+      "file": "routes/posts.py",
       "line": 25,
-      "severity": "Critical",
+      "end_line": 25,
+      "owasp": "A01:2017 - Injection"
+    },
+    {
+      "id": "python.django.security.injection.ssrf.ssrf-injection-requests.ssrf-injection-requests",
+      "category": "sast",
+      "name": "ssrf-injection-requests",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer security in the proxied request. See https://owasp.org/www-community/attacks/Server_Side_Request_Forgery to learn more about SSRF vulnerabilities.",
+      "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "routes/posts.py",
+      "line": 45,
+      "end_line": 47,
+      "owasp": "A10:2021 - Server-Side Request Forgery (SSRF)"
+    },
+    {
+      "id": "python.flask.security.injection.ssrf-requests.ssrf-requests",
+      "category": "sast",
+      "name": "ssrf-requests",
+      "message": "Data from request object is passed to a new server-side request. This could lead to a server-side request forgery (SSRF). To mitigate, ensure that schemes and hosts are validated against an allowlist, do not forward the response to the user, and ensure proper authentication and transport-layer security in the proxied request.",
+      "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "routes/posts.py",
+      "line": 47,
+      "end_line": 47,
+      "owasp": "A10:2021 - Server-Side Request Forgery (SSRF)"
+    },
+    {
+      "id": "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true",
+      "category": "sast",
+      "name": "subprocess-shell-true",
       "message": "Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which makes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.",
-      "rule_id": "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true",
-      "confidence": "MEDIUM"
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "utils/files.py",
+      "line": 25,
+      "end_line": 25,
+      "owasp": "A01:2017 - Injection"
     }
-  ]
+  ],
+  "scan": {
+    "scanner": {
+      "id": "semgrep",
+      "name": "Semgrep CE"
+    },
+    "type": "sast"
+  }
 }

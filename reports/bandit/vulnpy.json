@@ -1,0 +1,168 @@
+{
+  "version": "1.0.0",
+  "vulnerabilities": [
+    {
+      "id": "B404",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "cwe": "CWE-78",
+      "severity": "low",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 3,
+      "end_line": 17
+    },
+    {
+      "id": "B605",
+      "category": "sast",
+      "name": "start_process_with_a_shell",
+      "message": "Starting a process with a shell, possible injection detected, security issue.",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 9,
+      "end_line": 28
+    },
+    {
+      "id": "B602",
+      "category": "sast",
+      "name": "subprocess_popen_with_shell_equals_true",
+      "message": "subprocess call with shell=True identified, security issue.",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 14,
+      "end_line": 54
+    },
+    {
+      "id": "B602",
+      "category": "sast",
+      "name": "subprocess_popen_with_shell_equals_true",
+      "message": "subprocess call with shell=True identified, security issue.",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/cmdi.py",
+      "line": 19,
+      "end_line": 64
+    },
+    {
+      "id": "B403",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Consider possible security implications associated with pickle module.",
+      "cwe": "CWE-502",
+      "severity": "low",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/deserialization.py",
+      "line": 2,
+      "end_line": 13
+    },
+    {
+      "id": "B301",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "cwe": "CWE-502",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/deserialization.py",
+      "line": 9,
+      "end_line": 27
+    },
+    {
+      "id": "B506",
+      "category": "sast",
+      "name": "yaml_load",
+      "message": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+      "cwe": "CWE-20",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/deserialization.py",
+      "line": 15,
+      "end_line": 25
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "vulnpy/trigger/sqli.py",
+      "line": 10,
+      "end_line": 51
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "vulnpy/trigger/sqli.py",
+      "line": 19,
+      "end_line": 49
+    },
+    {
+      "id": "B113",
+      "category": "sast",
+      "name": "request_without_timeout",
+      "message": "Call to requests without timeout",
+      "cwe": "CWE-400",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "vulnpy/trigger/ssrf.py",
+      "line": 8,
+      "end_line": 28
+    },
+    {
+      "id": "B310",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "cwe": "CWE-22",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/ssrf.py",
+      "line": 15,
+      "end_line": 26
+    },
+    {
+      "id": "B307",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/unsafe_code_exec.py",
+      "line": 7,
+      "end_line": 23
+    },
+    {
+      "id": "B102",
+      "category": "sast",
+      "name": "exec_used",
+      "message": "Use of exec detected.",
+      "cwe": "CWE-78",
+      "severity": "medium",
+      "confidence": "HIGH",
+      "file": "vulnpy/trigger/unsafe_code_exec.py",
+      "line": 13,
+      "end_line": 14
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "bandit",
+      "name": "Bandit"
+    },
+    "type": "sast"
+  }
+}

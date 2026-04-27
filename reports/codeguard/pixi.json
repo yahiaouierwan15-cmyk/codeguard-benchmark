@@ -1,0 +1,73 @@
+{
+  "version": "3.0.0",
+  "vulnerabilities": [
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
+      "category": "sast",
+      "name": "jwt-no-expiry",
+      "message": "JWT token created without expiration (expiresIn). Tokens without expiry remain valid forever \u2014 if stolen, they can never be invalidated. Always set a short expiration: { expiresIn: \"15m\" }.\n",
+      "cwe": "CWE-613",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "api/api.js",
+      "line": 80
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
+      "category": "sast",
+      "name": "jwt-no-expiry",
+      "message": "JWT token created without expiration (expiresIn). Tokens without expiry remain valid forever \u2014 if stolen, they can never be invalidated. Always set a short expiration: { expiresIn: \"15m\" }.\n",
+      "cwe": "CWE-613",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "api/api.js",
+      "line": 140
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
+      "category": "sast",
+      "name": "jwt-no-expiry",
+      "message": "JWT token created without expiration (expiresIn). Tokens without expiry remain valid forever \u2014 if stolen, they can never be invalidated. Always set a short expiration: { expiresIn: \"15m\" }.\n",
+      "cwe": "CWE-613",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/server.js",
+      "line": 79
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
+      "category": "sast",
+      "name": "jwt-no-expiry",
+      "message": "JWT token created without expiration (expiresIn). Tokens without expiry remain valid forever \u2014 if stolen, they can never be invalidated. Always set a short expiration: { expiresIn: \"15m\" }.\n",
+      "cwe": "CWE-613",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/server.js",
+      "line": 139
+    },
+    {
+      "id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+      "category": "sast",
+      "name": "no-new-privileges",
+      "message": "Service 'db' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+      "cwe": "CWE-732: Incorrect Permission Assignment for Critical Resource",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "docker-compose.yaml",
+      "line": 4
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "codeguard",
+      "name": "CodeGuard AI"
+    },
+    "type": "sast",
+    "engines": [
+      "semgrep-custom",
+      "semgrep-auto",
+      "trufflehog",
+      "bandit"
+    ]
+  }
+}

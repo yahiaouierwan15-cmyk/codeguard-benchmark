@@ -2,13 +2,15 @@
 
 Professional SAST tool evaluation framework comparing **CodeGuard AI** against **Semgrep CE**, **Bandit**, and **Snyk Code** on a corpus of 13 intentionally vulnerable applications (98 ground-truth vulnerabilities, 7 languages).
 
-## Latest results (2026-04-27)
+## Latest results (2026-04-27 · Phase 1)
 
 | Tool | Precision | Recall | F1 | FP/kLOC |
 |------|-----------|--------|----|---------|
-| **CodeGuard** | **0.153** | **0.316** | **0.206** | 1.44 |
-| Semgrep CE | 0.089 | 0.306 | 0.138 | 2.57 |
-| Bandit | 0.375 | 0.061 | 0.105 | 0.08 |
+| **CodeGuard** | **0.184** | **0.449** | **0.261** | 0.98 |
+| Semgrep CE | 0.088 | 0.327 | 0.139 | 1.66 |
+| Bandit | 0.310 | 0.092 | 0.142 | 0.10 |
+
+CodeGuard: **2.1× precision · 1.4× recall · 1.9× F1** vs Semgrep CE. **41% fewer FPs/kLOC.**
 
 Full breakdown (per-language, per-CWE, unique detections, caveats): **[docs/RESULTS.md](docs/RESULTS.md)**.
 

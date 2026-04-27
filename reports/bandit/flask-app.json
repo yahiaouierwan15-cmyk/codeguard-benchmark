@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "vulnerabilities": [
+    {
+      "id": "B404",
+      "category": "sast",
+      "name": "blacklist",
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "cwe": "CWE-78",
+      "severity": "low",
+      "confidence": "HIGH",
+      "file": "app.py",
+      "line": 5,
+      "end_line": 17
+    },
+    {
+      "id": "B105",
+      "category": "sast",
+      "name": "hardcoded_password_string",
+      "message": "Possible hardcoded password: 'mysupersecretkey123'",
+      "cwe": "CWE-259",
+      "severity": "low",
+      "confidence": "MEDIUM",
+      "file": "app.py",
+      "line": 13,
+      "end_line": 34
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app.py",
+      "line": 27,
+      "end_line": 48
+    },
+    {
+      "id": "B602",
+      "category": "sast",
+      "name": "subprocess_popen_with_shell_equals_true",
+      "message": "subprocess call with shell=True identified, security issue.",
+      "cwe": "CWE-78",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app.py",
+      "line": 38,
+      "end_line": 69
+    },
+    {
+      "id": "B113",
+      "category": "sast",
+      "name": "request_without_timeout",
+      "message": "Call to requests without timeout",
+      "cwe": "CWE-400",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app.py",
+      "line": 46,
+      "end_line": 32
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "app.py",
+      "line": 67,
+      "end_line": 88
+    },
+    {
+      "id": "B105",
+      "category": "sast",
+      "name": "hardcoded_password_string",
+      "message": "Possible hardcoded password: 'hardcoded-jwt-token'",
+      "cwe": "CWE-259",
+      "severity": "low",
+      "confidence": "MEDIUM",
+      "file": "app.py",
+      "line": 72,
+      "end_line": 47
+    },
+    {
+      "id": "B608",
+      "category": "sast",
+      "name": "hardcoded_sql_expressions",
+      "message": "Possible SQL injection vector through string-based query construction.",
+      "cwe": "CWE-89",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app.py",
+      "line": 82,
+      "end_line": 71
+    },
+    {
+      "id": "B201",
+      "category": "sast",
+      "name": "flask_debug_true",
+      "message": "A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.",
+      "cwe": "CWE-94",
+      "severity": "high",
+      "confidence": "MEDIUM",
+      "file": "app.py",
+      "line": 88,
+      "end_line": 23
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "bandit",
+      "name": "Bandit"
+    },
+    "type": "sast"
+  }
+}
