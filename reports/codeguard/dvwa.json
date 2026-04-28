@@ -86,39 +86,6 @@
       "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
       "severity": "high",
       "confidence": "MEDIUM",
-      "file": "vulnerabilities/bac/source/medium.php",
-      "line": 21
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
-      "file": "vulnerabilities/bac/source/medium.php",
-      "line": 28
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
-      "file": "vulnerabilities/bac/source/medium.php",
-      "line": 71
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
       "file": "vulnerabilities/brute/source/low.php",
       "line": 12
     },
@@ -163,74 +130,8 @@
       "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
       "severity": "high",
       "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/high.php",
-      "line": 26
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/high.php",
-      "line": 30
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/impossible.php",
-      "line": 22
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/impossible.php",
-      "line": 26
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
       "file": "vulnerabilities/exec/source/low.php",
       "line": 10
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/medium.php",
-      "line": 19
-    },
-    {
-      "id": "php.lang.security.exec-use.exec-use",
-      "category": "sast",
-      "name": "exec-use",
-      "message": "Executing non-constant commands. This can lead to command injection.",
-      "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-      "severity": "high",
-      "confidence": "LOW",
-      "file": "vulnerabilities/exec/source/medium.php",
-      "line": 23
     },
     {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.inclusion.php-include-variable",
@@ -242,17 +143,6 @@
       "confidence": "MEDIUM",
       "file": "vulnerabilities/fi/index.php",
       "line": 36
-    },
-    {
-      "id": "php.lang.security.injection.tainted-filename.tainted-filename",
-      "category": "sast",
-      "name": "tainted-filename",
-      "message": "File name based on user input risks server-side request forgery.",
-      "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
-      "severity": "medium",
-      "confidence": "MEDIUM",
-      "file": "vulnerabilities/fi/source/high.php",
-      "line": 7
     },
     {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
@@ -273,30 +163,8 @@
       "cwe": "CWE-601",
       "severity": "medium",
       "confidence": "HIGH",
-      "file": "vulnerabilities/open_redirect/source/high.php",
-      "line": 5
-    },
-    {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.redirect.php-header-redirect",
-      "category": "sast",
-      "name": "php-header-redirect",
-      "message": "PHP header() Location redirect uses user-controlled input \u2014 open redirect. Validate the URL against a whitelist of allowed paths before redirecting.\n",
-      "cwe": "CWE-601",
-      "severity": "medium",
-      "confidence": "HIGH",
       "file": "vulnerabilities/open_redirect/source/low.php",
       "line": 4
-    },
-    {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.redirect.php-header-redirect",
-      "category": "sast",
-      "name": "php-header-redirect",
-      "message": "PHP header() Location redirect uses user-controlled input \u2014 open redirect. Validate the URL against a whitelist of allowed paths before redirecting.\n",
-      "cwe": "CWE-601",
-      "severity": "medium",
-      "confidence": "HIGH",
-      "file": "vulnerabilities/open_redirect/source/medium.php",
-      "line": 11
     },
     {
       "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
@@ -328,28 +196,6 @@
       "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
       "severity": "high",
       "confidence": "MEDIUM",
-      "file": "vulnerabilities/sqli_blind/source/high.php",
-      "line": 11
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
-      "file": "vulnerabilities/sqli_blind/source/high.php",
-      "line": 33
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
       "file": "vulnerabilities/sqli_blind/source/low.php",
       "line": 11
     },
@@ -363,28 +209,6 @@
       "confidence": "MEDIUM",
       "file": "vulnerabilities/sqli_blind/source/low.php",
       "line": 32
-    },
-    {
-      "id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
-      "category": "sast",
-      "name": "tainted-sql-string",
-      "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-      "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-      "severity": "high",
-      "confidence": "MEDIUM",
-      "file": "vulnerabilities/sqli_blind/source/medium.php",
-      "line": 34
-    },
-    {
-      "id": "php.lang.security.unlink-use.unlink-use",
-      "category": "sast",
-      "name": "unlink-use",
-      "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
-      "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-      "severity": "medium",
-      "confidence": "LOW",
-      "file": "vulnerabilities/upload/source/impossible.php",
-      "line": 51
     },
     {
       "id": "php.lang.security.eval-use.eval-use",

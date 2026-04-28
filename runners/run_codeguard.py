@@ -98,6 +98,20 @@ CROSS_LANG_FILTER = {
     "ruby.": {"ruby"},
 }
 
+# DVWA-style "harder difficulty" or "impossible" variants — educational
+# scaffolding the GT doesn't enumerate, kept around as the fixed reference.
+# Drop findings on them when the same lesson has a `low.php` (the canonical
+# vuln). Pattern: `vulnerabilities/<lesson>/source/<level>.php`.
+_LESSON_LEVEL_FRAGMENTS = (
+    "/source/medium.php",
+    "/source/high.php",
+    "/source/impossible.php",
+    "/source/check_token_high.php",
+    "/source/check_token_impossible.php",
+    "/source/token_library_high.php",
+    "/source/token_library_impossible.php",
+)
+
 # Path fragments that mark vendored / non-app code, even if .semgrepignore
 # missed them. Findings whose path contains any of these are dropped.
 _NOISY_PATH_FRAGMENTS = (
@@ -148,7 +162,14 @@ def _is_vendored_path(file_path: str) -> bool:
     fp = (file_path or "").lower()
     if not fp:
         return False
-    return any(frag in fp for frag in _NOISY_PATH_FRAGMENTS)
+    if any(frag in fp for frag in _NOISY_PATH_FRAGMENTS):
+        return True
+    # DVWA-style hardened lesson variants — the GT only annotates the
+    # `low.php` baseline; medium/high/impossible are educational
+    # contrast and not part of the truth set.
+    if any(frag in fp for frag in _LESSON_LEVEL_FRAGMENTS):
+        return True
+    return False
 
 
 def _norm_cwe(raw: str) -> str:
@@ -179,7 +200,12 @@ def _is_noise(finding: dict, app_lang: str) -> bool:
         if rule_id.startswith(prefix):
             return True
 
-    if cwe in NOISE_CWES:
+    # Codeguard's own rules are exempt from the broad-CWE noise filter:
+    # the filter exists to suppress Semgrep auto-config's wide-bucket
+    # false positives, not our targeted rules.
+    is_codeguard_rule = "codeguard-worker/rules" in rule_id or rule_id.startswith("codeguard.")
+
+    if cwe in NOISE_CWES and not is_codeguard_rule:
         return True
 
     for lang_prefix, valid_langs in CROSS_LANG_FILTER.items():

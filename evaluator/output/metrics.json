@@ -14,30 +14,31 @@
   },
   "global": {
     "codeguard": {
-      "tp": 51,
-      "fp": 206,
-      "fn": 47,
-      "precision": 0.1984,
-      "recall": 0.5204,
-      "f1": 0.2873,
-      "fp_per_kloc": 1.03,
+      "tp": 54,
+      "fp": 200,
+      "fn": 44,
+      "precision": 0.2126,
+      "recall": 0.551,
+      "f1": 0.3068,
+      "fp_per_kloc": 1.0,
       "total_loc": 199430,
       "total_gt": 98,
       "precision_ci": [
-        0.1514,
-        0.249
+        0.1641,
+        0.2638
       ],
       "recall_ci": [
-        0.4224,
-        0.6226
+        0.4528,
+        0.65
       ],
       "f1_ci": [
-        0.2274,
-        0.3478
+        0.2471,
+        0.3671
       ],
-      "cwe_coverage": "13/28",
+      "cwe_coverage": "15/28",
       "detected_cwes": [
         "CWE-22",
+        "CWE-256",
         "CWE-502",
         "CWE-601",
         "CWE-639",
@@ -45,6 +46,7 @@
         "CWE-79",
         "CWE-798",
         "CWE-89",
+        "CWE-915",
         "CWE-916",
         "CWE-918",
         "CWE-943",
@@ -155,23 +157,23 @@
         "loc": 71331
       },
       "javascript": {
-        "tp": 9,
-        "fp": 32,
-        "fn": 15,
-        "precision": 0.2195,
-        "recall": 0.375,
-        "f1": 0.2769,
-        "fp_per_kloc": 2.4,
+        "tp": 12,
+        "fp": 42,
+        "fn": 12,
+        "precision": 0.2222,
+        "recall": 0.5,
+        "f1": 0.3077,
+        "fp_per_kloc": 3.15,
         "loc": 13329
       },
       "php": {
         "tp": 6,
-        "fp": 55,
+        "fp": 39,
         "fn": 12,
-        "precision": 0.0984,
+        "precision": 0.1333,
         "recall": 0.3333,
-        "f1": 0.1519,
-        "fp_per_kloc": 1.59,
+        "f1": 0.1905,
+        "fp_per_kloc": 1.12,
         "loc": 34676
       },
       "python": {
@@ -396,27 +398,27 @@
     "codeguard": {
       "CWE-89": {
         "tp": 19,
-        "fp": 27,
+        "fp": 21,
         "fn": 5,
-        "precision": 0.413,
+        "precision": 0.475,
         "recall": 0.7917,
-        "f1": 0.5429
+        "f1": 0.5937
       },
       "CWE-918": {
         "tp": 4,
-        "fp": 10,
+        "fp": 9,
         "fn": 1,
-        "precision": 0.2857,
+        "precision": 0.3077,
         "recall": 0.8,
-        "f1": 0.4211
+        "f1": 0.4444
       },
       "CWE-22": {
         "tp": 4,
-        "fp": 11,
+        "fp": 10,
         "fn": 3,
-        "precision": 0.2667,
+        "precision": 0.2857,
         "recall": 0.5714,
-        "f1": 0.3636
+        "f1": 0.381
       },
       "CWE-78": {
         "tp": 5,
@@ -468,11 +470,11 @@
       },
       "CWE-601": {
         "tp": 3,
-        "fp": 7,
+        "fp": 5,
         "fn": 1,
-        "precision": 0.3,
+        "precision": 0.375,
         "recall": 0.75,
-        "f1": 0.4286
+        "f1": 0.5
       },
       "CWE-23": {
         "tp": 0,
@@ -539,12 +541,12 @@
         "f1": 0.0
       },
       "CWE-79": {
-        "tp": 5,
-        "fp": 31,
-        "fn": 5,
-        "precision": 0.1389,
-        "recall": 0.5,
-        "f1": 0.2174
+        "tp": 6,
+        "fp": 36,
+        "fn": 4,
+        "precision": 0.1429,
+        "recall": 0.6,
+        "f1": 0.2308
       },
       "CWE-200": {
         "tp": 0,
@@ -556,7 +558,7 @@
       },
       "CWE-94": {
         "tp": 0,
-        "fp": 16,
+        "fp": 10,
         "fn": 0,
         "precision": 0.0,
         "recall": 0.0,
@@ -579,12 +581,12 @@
         "f1": 0.3333
       },
       "CWE-915": {
-        "tp": 0,
-        "fp": 2,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
+        "tp": 1,
+        "fp": 5,
+        "fn": 0,
+        "precision": 0.1667,
+        "recall": 1.0,
+        "f1": 0.2857
       },
       "CWE-639": {
         "tp": 1,
@@ -714,18 +716,18 @@
         "recall": 0.0,
         "f1": 0.0
       },
+      "CWE-256": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.3333,
+        "recall": 1.0,
+        "f1": 0.5
+      },
       "CWE-613": {
         "tp": 0,
         "fp": 4,
         "fn": 0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-256": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
@@ -1681,6 +1683,24 @@
         "gt_id": "XW-003",
         "cwe": "CWE-98",
         "description": "Local file inclusion \u2014 include() with user-controlled path"
+      },
+      {
+        "app": "pixi",
+        "gt_id": "PX-006",
+        "cwe": "CWE-79",
+        "description": "Reflected XSS \u2014 search query echoed in error response without encoding"
+      },
+      {
+        "app": "pixi",
+        "gt_id": "PX-001",
+        "cwe": "CWE-915",
+        "description": "Mass assignment \u2014 req.body.is_admin lets any user register as admin"
+      },
+      {
+        "app": "pixi",
+        "gt_id": "PX-005",
+        "cwe": "CWE-256",
+        "description": "Plaintext password storage \u2014 password stored directly in MongoDB without hashing"
       }
     ],
     "semgrep": [

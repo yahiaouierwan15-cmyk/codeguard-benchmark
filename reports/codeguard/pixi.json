@@ -13,6 +13,28 @@
       "line": 80
     },
     {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.mass-assignment-is-admin-js",
+      "category": "sast",
+      "name": "mass-assignment-is-admin-js",
+      "message": "Mass assignment / privilege escalation: req.body.is_admin (or role/isAdmin) is read directly into the persistence layer. An attacker can self-elevate by including the field in any registration / profile-update request. Whitelist mutable fields explicitly.\n",
+      "cwe": "CWE-915",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "api/api.js",
+      "line": 110
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.plaintext-password-storage-js",
+      "category": "sast",
+      "name": "plaintext-password-storage-js",
+      "message": "Possible plaintext password storage: a `password` field is written to the database without an obvious hash step (bcrypt / argon2 / scrypt). Hash with bcrypt(cost \u2265 12) or argon2id before persisting.\n",
+      "cwe": "CWE-256",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "api/api.js",
+      "line": 125
+    },
+    {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
       "category": "sast",
       "name": "jwt-no-expiry",
@@ -22,6 +44,17 @@
       "confidence": "MEDIUM",
       "file": "api/api.js",
       "line": 140
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.mass-assignment-is-admin-js",
+      "category": "sast",
+      "name": "mass-assignment-is-admin-js",
+      "message": "Mass assignment / privilege escalation: req.body.is_admin (or role/isAdmin) is read directly into the persistence layer. An attacker can self-elevate by including the field in any registration / profile-update request. Whitelist mutable fields explicitly.\n",
+      "cwe": "CWE-915",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "api/api.js",
+      "line": 531
     },
     {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
@@ -35,6 +68,28 @@
       "line": 79
     },
     {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.mass-assignment-is-admin-js",
+      "category": "sast",
+      "name": "mass-assignment-is-admin-js",
+      "message": "Mass assignment / privilege escalation: req.body.is_admin (or role/isAdmin) is read directly into the persistence layer. An attacker can self-elevate by including the field in any registration / profile-update request. Whitelist mutable fields explicitly.\n",
+      "cwe": "CWE-915",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 109
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.plaintext-password-storage-js",
+      "category": "sast",
+      "name": "plaintext-password-storage-js",
+      "message": "Possible plaintext password storage: a `password` field is written to the database without an obvious hash step (bcrypt / argon2 / scrypt). Hash with bcrypt(cost \u2265 12) or argon2id before persisting.\n",
+      "cwe": "CWE-256",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/server.js",
+      "line": 124
+    },
+    {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.jwt-no-expiry",
       "category": "sast",
       "name": "jwt-no-expiry",
@@ -44,6 +99,94 @@
       "confidence": "MEDIUM",
       "file": "app/server.js",
       "line": 139
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 218
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.mass-assignment-is-admin-js",
+      "category": "sast",
+      "name": "mass-assignment-is-admin-js",
+      "message": "Mass assignment / privilege escalation: req.body.is_admin (or role/isAdmin) is read directly into the persistence layer. An attacker can self-elevate by including the field in any registration / profile-update request. Whitelist mutable fields explicitly.\n",
+      "cwe": "CWE-915",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 575
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 949
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 971
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 993
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 1020
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.plaintext-password-storage-js",
+      "category": "sast",
+      "name": "plaintext-password-storage-js",
+      "message": "Possible plaintext password storage: a `password` field is written to the database without an obvious hash step (bcrypt / argon2 / scrypt). Hash with bcrypt(cost \u2265 12) or argon2id before persisting.\n",
+      "cwe": "CWE-256",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/server.js",
+      "line": 1055
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.xss-res-send-concat",
+      "category": "sast",
+      "name": "xss-res-send-concat",
+      "message": "Reflected XSS: req.* data inserted into HTML response via concatenation / template literals without HTML-encoding. Use a templating engine with auto-escaping or sanitize via `escape-html`.\n",
+      "cwe": "CWE-79",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "app/server.js",
+      "line": 1160
     },
     {
       "id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
