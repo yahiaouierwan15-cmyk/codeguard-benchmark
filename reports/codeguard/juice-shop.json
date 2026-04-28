@@ -2,6 +2,61 @@
   "version": "3.0.0",
   "vulnerabilities": [
     {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/update-challenges-ebook.yml",
+      "line": 22
+    },
+    {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/update-challenges-www-legacy.yml",
+      "line": 27
+    },
+    {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/update-challenges-www-legacy.yml",
+      "line": 36
+    },
+    {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/update-challenges-www.yml",
+      "line": 27
+    },
+    {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/update-challenges-www.yml",
+      "line": 36
+    },
+    {
       "id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
       "category": "sast",
       "name": "express-sequelize-injection",
@@ -79,12 +134,12 @@
       "line": 49
     },
     {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.weak-hash-md5-sha1-js",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.weak-password-hash-md5-js",
       "category": "sast",
-      "name": "weak-hash-md5-sha1-js",
-      "message": "MD5 and SHA1 are cryptographically broken and must not be used for password hashing. Use bcrypt, argon2, or scrypt instead.\n",
-      "cwe": "CWE-327",
-      "severity": "medium",
+      "name": "weak-password-hash-md5-js",
+      "message": "MD5/SHA-1 used for password hashing. Use bcrypt (`bcrypt.hashSync(pw, 12)`) or argon2.\n",
+      "cwe": "CWE-916",
+      "severity": "high",
       "confidence": "HIGH",
       "file": "lib/insecurity.ts",
       "line": 43
@@ -112,6 +167,28 @@
       "line": 152
     },
     {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/address.ts",
+      "line": 18
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/address.ts",
+      "line": 29
+    },
+    {
       "id": "javascript.express.security.audit.express-detect-notevil-usage.express-detect-notevil-usage",
       "category": "sast",
       "name": "express-detect-notevil-usage",
@@ -121,6 +198,17 @@
       "confidence": "LOW",
       "file": "routes/b2bOrder.ts",
       "line": 23
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/basketItems.ts",
+      "line": 68
     },
     {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
@@ -165,6 +253,39 @@
       "confidence": "LOW",
       "file": "routes/currentUser.ts",
       "line": 31
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/delivery.ts",
+      "line": 34
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/deluxe.ts",
+      "line": 19
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/deluxe.ts",
+      "line": 35
     },
     {
       "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",
@@ -242,6 +363,28 @@
       "confidence": "MEDIUM",
       "file": "routes/login.ts",
       "line": 65
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/payment.ts",
+      "line": 41
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-js",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-js",
+      "message": "Possible IDOR: model fetched/updated/deleted by ID from req.* without a visible ownership check. Verify that the current user is permitted to access this resource (e.g. add `where: { id, userId: req.user.id }` or an explicit policy check).\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/payment.ts",
+      "line": 70
     },
     {
       "id": "javascript.express.security.audit.express-res-sendfile.express-res-sendfile",

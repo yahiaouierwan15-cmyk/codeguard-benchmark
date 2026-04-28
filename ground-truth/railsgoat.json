@@ -1,0 +1,92 @@
+[
+  {
+    "id": "RG-001",
+    "file": "app/controllers/users_controller.rb",
+    "line_start": 25,
+    "line_end": 35,
+    "cwe": "CWE-89",
+    "severity": "Critical",
+    "description": "SQL injection — User.where with string interpolation of params[:user][:id]"
+  },
+  {
+    "id": "RG-002",
+    "file": "app/controllers/users_controller.rb",
+    "line_start": 1,
+    "line_end": 60,
+    "cwe": "CWE-285",
+    "severity": "High",
+    "description": "Broken access control — admin actions exposed without role check (skip_before_action authenticated on new/create)"
+  },
+  {
+    "id": "RG-003",
+    "file": "app/models/benefits.rb",
+    "line_start": 10,
+    "line_end": 25,
+    "cwe": "CWE-78",
+    "severity": "High",
+    "description": "Command injection — system() with unescaped user-supplied filename interpolated into shell"
+  },
+  {
+    "id": "RG-004",
+    "file": "app/views/layouts/shared/_header.html.erb",
+    "line_start": 40,
+    "line_end": 55,
+    "cwe": "CWE-79",
+    "severity": "High",
+    "description": "Stored XSS — current_user.first_name rendered with .html_safe bypassing Rails auto-escaping"
+  },
+  {
+    "id": "RG-005",
+    "file": "app/controllers/password_resets_controller.rb",
+    "line_start": 42,
+    "line_end": 55,
+    "cwe": "CWE-640",
+    "severity": "High",
+    "description": "Weak password reset — token = Digest::MD5.hexdigest(email) is trivially guessable"
+  },
+  {
+    "id": "RG-006",
+    "file": "config/initializers/secret_token.rb",
+    "line_start": 1,
+    "line_end": 15,
+    "cwe": "CWE-798",
+    "severity": "Critical",
+    "description": "Hardcoded Rails secret_key_base in version-controlled file"
+  },
+  {
+    "id": "RG-007",
+    "file": "app/models/user.rb",
+    "line_start": 40,
+    "line_end": 60,
+    "cwe": "CWE-916",
+    "severity": "Medium",
+    "description": "Plain MD5 password storage — Digest::MD5.hexdigest used for both write and authenticate paths"
+  },
+  {
+    "id": "RG-008",
+    "file": "app/controllers/api/v1/users_controller.rb",
+    "line_start": 1,
+    "line_end": 60,
+    "cwe": "CWE-200",
+    "severity": "Medium",
+    "description": "Excessive data exposure — API returns full user record including password digest in JSON"
+  },
+  {
+    "id": "RG-009",
+    "file": "app/controllers/work_info_controller.rb",
+    "line_start": 1,
+    "line_end": 30,
+    "cwe": "CWE-639",
+    "severity": "High",
+    "description": "IDOR — User.find_by(id: params[:user_id]) with no ownership check before update"
+  },
+  {
+    "id": "RG-010",
+    "file": "Gemfile",
+    "line_start": 1,
+    "line_end": 50,
+    "cwe": "CWE-1104",
+    "severity": "High",
+    "description": "Vulnerable dependency — outdated gems with known CVEs (Rails / nokogiri / etc.)"
+  }
+]

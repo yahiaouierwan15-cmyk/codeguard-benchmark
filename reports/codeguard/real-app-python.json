@@ -13,23 +13,23 @@
       "line": 11
     },
     {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.weak-hash-python",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.weak-password-hash-md5-python",
       "category": "sast",
-      "name": "weak-hash-python",
-      "message": "MD5/SHA1 are not suitable for password hashing. Use passlib with bcrypt or argon2: passlib.hash.bcrypt.hash(password).\n",
-      "cwe": "CWE-327",
-      "severity": "medium",
+      "name": "weak-password-hash-md5-python",
+      "message": "MD5/SHA-1 used for password hashing \u2014 fast, unsalted, broken. Use bcrypt, argon2id, or PBKDF2.\n",
+      "cwe": "CWE-916",
+      "severity": "high",
       "confidence": "HIGH",
       "file": "routes/auth.py",
       "line": 27
     },
     {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.codeguard.auth.weak-hash-python",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.weak-password-hash-md5-python",
       "category": "sast",
-      "name": "weak-hash-python",
-      "message": "MD5/SHA1 are not suitable for password hashing. Use passlib with bcrypt or argon2: passlib.hash.bcrypt.hash(password).\n",
-      "cwe": "CWE-327",
-      "severity": "medium",
+      "name": "weak-password-hash-md5-python",
+      "message": "MD5/SHA-1 used for password hashing \u2014 fast, unsalted, broken. Use bcrypt, argon2id, or PBKDF2.\n",
+      "cwe": "CWE-916",
+      "severity": "high",
       "confidence": "HIGH",
       "file": "routes/auth.py",
       "line": 50

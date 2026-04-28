@@ -1,0 +1,137 @@
+[
+  {
+    "id": "JS-001",
+    "file": "routes/login.ts",
+    "line_start": 30,
+    "line_end": 45,
+    "cwe": "CWE-89",
+    "severity": "Critical",
+    "description": "SQL injection in login — sequelize.query template literal with req.body.email/password directly interpolated"
+  },
+  {
+    "id": "JS-002",
+    "file": "routes/search.ts",
+    "line_start": 18,
+    "line_end": 30,
+    "cwe": "CWE-89",
+    "severity": "High",
+    "description": "SQL injection in product search — sequelize.query template literal interpolating req.query.q (criteria)"
+  },
+  {
+    "id": "JS-003",
+    "file": "routes/search.ts",
+    "line_start": 18,
+    "line_end": 30,
+    "cwe": "CWE-79",
+    "severity": "High",
+    "description": "Reflected XSS — search query echoed in response without sanitization (same sink as JS-002)"
+  },
+  {
+    "id": "JS-004",
+    "file": "routes/fileServer.ts",
+    "line_start": 25,
+    "line_end": 40,
+    "cwe": "CWE-22",
+    "severity": "High",
+    "description": "Path traversal — res.sendFile with user-controlled filename concatenated to ftp/ base path"
+  },
+  {
+    "id": "JS-005",
+    "file": "routes/redirect.ts",
+    "line_start": 12,
+    "line_end": 22,
+    "cwe": "CWE-601",
+    "severity": "Medium",
+    "description": "Open redirect — unvalidated to URL parameter used in res.redirect"
+  },
+  {
+    "id": "JS-006",
+    "file": "lib/insecurity.ts",
+    "line_start": 38,
+    "line_end": 48,
+    "cwe": "CWE-327",
+    "severity": "Medium",
+    "description": "Weak cryptography — MD5 (crypto.createHash('md5')) used for password hashing instead of bcrypt/argon2"
+  },
+  {
+    "id": "JS-007",
+    "file": "lib/insecurity.ts",
+    "line_start": 38,
+    "line_end": 48,
+    "cwe": "CWE-798",
+    "severity": "Critical",
+    "description": "Hardcoded admin credentials / weak hashing seeds in insecurity module"
+  },
+  {
+    "id": "JS-008",
+    "file": "routes/basket.ts",
+    "line_start": 1,
+    "line_end": 36,
+    "cwe": "CWE-639",
+    "severity": "High",
+    "description": "IDOR — user can access other users' baskets by manipulating basket ID (no ownership check before findOne)"
+  },
+  {
+    "id": "JS-009",
+    "file": "routes/userProfile.ts",
+    "line_start": 65,
+    "line_end": 85,
+    "cwe": "CWE-1336",
+    "severity": "High",
+    "description": "Server-Side Template Injection — _username_ replaced into template via regex without sanitization"
+  },
+  {
+    "id": "JS-010",
+    "file": "server.ts",
+    "line_start": 1,
+    "line_end": 200,
+    "cwe": "CWE-209",
+    "severity": "Medium",
+    "description": "Information disclosure — error stack traces returned in HTTP responses"
+  },
+  {
+    "id": "JS-011",
+    "file": "routes/captcha.ts",
+    "line_start": 10,
+    "line_end": 25,
+    "cwe": "CWE-330",
+    "severity": "Medium",
+    "description": "Weak PRNG — Math.random() used to generate captcha values"
+  },
+  {
+    "id": "JS-012",
+    "file": "routes/b2bOrder.ts",
+    "line_start": 1,
+    "line_end": 100,
+    "cwe": "CWE-611",
+    "severity": "High",
+    "description": "XXE — XML parser processes external entities in B2B order upload"
+  },
+  {
+    "id": "JS-013",
+    "file": "routes/updateProductReviews.ts",
+    "line_start": 14,
+    "line_end": 30,
+    "cwe": "CWE-943",
+    "severity": "High",
+    "description": "NoSQL injection in product review update — operator injection in MongoDB-like query"
+  },
+  {
+    "id": "JS-014",
+    "file": "routes/fileUpload.ts",
+    "line_start": 25,
+    "line_end": 80,
+    "cwe": "CWE-434",
+    "severity": "High",
+    "description": "Unrestricted file upload — extension/MIME validation bypassable"
+  },
+  {
+    "id": "JS-015",
+    "file": "lib/utils.ts",
+    "line_start": 1,
+    "line_end": 200,
+    "cwe": "CWE-1333",
+    "severity": "Medium",
+    "description": "ReDoS — vulnerable regex in utility function"
+  }
+]

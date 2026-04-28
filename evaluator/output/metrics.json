@@ -14,36 +14,38 @@
   },
   "global": {
     "codeguard": {
-      "tp": 44,
-      "fp": 196,
-      "fn": 54,
-      "precision": 0.1833,
-      "recall": 0.449,
-      "f1": 0.2604,
-      "fp_per_kloc": 0.98,
+      "tp": 51,
+      "fp": 206,
+      "fn": 47,
+      "precision": 0.1984,
+      "recall": 0.5204,
+      "f1": 0.2873,
+      "fp_per_kloc": 1.03,
       "total_loc": 199430,
       "total_gt": 98,
       "precision_ci": [
-        0.1362,
-        0.2336
+        0.1514,
+        0.249
       ],
       "recall_ci": [
-        0.3537,
-        0.549
+        0.4224,
+        0.6226
       ],
       "f1_ci": [
-        0.2018,
-        0.32
+        0.2274,
+        0.3478
       ],
-      "cwe_coverage": "11/27",
+      "cwe_coverage": "13/28",
       "detected_cwes": [
         "CWE-22",
         "CWE-502",
         "CWE-601",
+        "CWE-639",
         "CWE-78",
         "CWE-79",
         "CWE-798",
         "CWE-89",
+        "CWE-916",
         "CWE-918",
         "CWE-943",
         "CWE-95",
@@ -51,28 +53,28 @@
       ]
     },
     "semgrep": {
-      "tp": 32,
-      "fp": 331,
-      "fn": 66,
-      "precision": 0.0882,
-      "recall": 0.3265,
-      "f1": 0.1388,
-      "fp_per_kloc": 1.66,
+      "tp": 36,
+      "fp": 334,
+      "fn": 62,
+      "precision": 0.0973,
+      "recall": 0.3673,
+      "f1": 0.1538,
+      "fp_per_kloc": 1.67,
       "total_loc": 199430,
       "total_gt": 98,
       "precision_ci": [
-        0.0608,
-        0.1183
+        0.069,
+        0.1285
       ],
       "recall_ci": [
-        0.2381,
-        0.4235
+        0.2727,
+        0.4636
       ],
       "f1_ci": [
-        0.0976,
-        0.1822
+        0.1094,
+        0.2
       ],
-      "cwe_coverage": "9/27",
+      "cwe_coverage": "9/28",
       "detected_cwes": [
         "CWE-22",
         "CWE-502",
@@ -107,24 +109,49 @@
         0.0656,
         0.2256
       ],
-      "cwe_coverage": "3/27",
+      "cwe_coverage": "3/28",
       "detected_cwes": [
         "CWE-502",
         "CWE-78",
         "CWE-89"
       ]
+    },
+    "snyk": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 98,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fp_per_kloc": 0.0,
+      "total_loc": 199430,
+      "total_gt": 98,
+      "precision_ci": [
+        0.0,
+        0.0
+      ],
+      "recall_ci": [
+        0.0,
+        0.0
+      ],
+      "f1_ci": [
+        0.0,
+        0.0
+      ],
+      "cwe_coverage": "0/28",
+      "detected_cwes": []
     }
   },
   "by_language": {
     "codeguard": {
       "java": {
         "tp": 10,
-        "fp": 27,
+        "fp": 28,
         "fn": 0,
-        "precision": 0.2703,
+        "precision": 0.2632,
         "recall": 1.0,
-        "f1": 0.4255,
-        "fp_per_kloc": 0.38,
+        "f1": 0.4167,
+        "fp_per_kloc": 0.39,
         "loc": 71331
       },
       "javascript": {
@@ -139,12 +166,12 @@
       },
       "php": {
         "tp": 6,
-        "fp": 54,
+        "fp": 55,
         "fn": 12,
-        "precision": 0.1,
+        "precision": 0.0984,
         "recall": 0.3333,
-        "f1": 0.1538,
-        "fp_per_kloc": 1.56,
+        "f1": 0.1519,
+        "fp_per_kloc": 1.59,
         "loc": 34676
       },
       "python": {
@@ -158,35 +185,35 @@
         "loc": 315
       },
       "typescript": {
-        "tp": 2,
-        "fp": 39,
-        "fn": 13,
-        "precision": 0.0488,
-        "recall": 0.1333,
-        "f1": 0.0714,
-        "fp_per_kloc": 0.55,
+        "tp": 4,
+        "fp": 50,
+        "fn": 11,
+        "precision": 0.0741,
+        "recall": 0.2667,
+        "f1": 0.1159,
+        "fp_per_kloc": 0.71,
         "loc": 70848
       },
       "ruby": {
-        "tp": 0,
-        "fp": 29,
-        "fn": 10,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "fp_per_kloc": 3.25,
+        "tp": 5,
+        "fp": 26,
+        "fn": 5,
+        "precision": 0.1613,
+        "recall": 0.5,
+        "f1": 0.2439,
+        "fp_per_kloc": 2.91,
         "loc": 8931
       }
     },
     "semgrep": {
       "java": {
         "tp": 10,
-        "fp": 135,
+        "fp": 136,
         "fn": 0,
-        "precision": 0.069,
+        "precision": 0.0685,
         "recall": 1.0,
-        "f1": 0.129,
-        "fp_per_kloc": 1.89,
+        "f1": 0.1282,
+        "fp_per_kloc": 1.91,
         "loc": 71331
       },
       "javascript": {
@@ -201,12 +228,12 @@
       },
       "php": {
         "tp": 4,
-        "fp": 61,
+        "fp": 62,
         "fn": 14,
-        "precision": 0.0615,
+        "precision": 0.0606,
         "recall": 0.2222,
-        "f1": 0.0964,
-        "fp_per_kloc": 1.76,
+        "f1": 0.0952,
+        "fp_per_kloc": 1.79,
         "loc": 34676
       },
       "python": {
@@ -220,23 +247,23 @@
         "loc": 315
       },
       "typescript": {
-        "tp": 2,
-        "fp": 31,
-        "fn": 13,
-        "precision": 0.0606,
-        "recall": 0.1333,
-        "f1": 0.0833,
-        "fp_per_kloc": 0.44,
+        "tp": 4,
+        "fp": 34,
+        "fn": 11,
+        "precision": 0.1053,
+        "recall": 0.2667,
+        "f1": 0.1509,
+        "fp_per_kloc": 0.48,
         "loc": 70848
       },
       "ruby": {
-        "tp": 0,
-        "fp": 30,
-        "fn": 10,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "fp_per_kloc": 3.36,
+        "tp": 2,
+        "fp": 28,
+        "fn": 8,
+        "precision": 0.0667,
+        "recall": 0.2,
+        "f1": 0.1,
+        "fp_per_kloc": 3.14,
         "loc": 8931
       }
     },
@@ -301,17 +328,79 @@
         "fp_per_kloc": 0.0,
         "loc": 8931
       }
+    },
+    "snyk": {
+      "java": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 71331
+      },
+      "javascript": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 13329
+      },
+      "php": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 18,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 34676
+      },
+      "python": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 315
+      },
+      "typescript": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 70848
+      },
+      "ruby": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fp_per_kloc": 0.0,
+        "loc": 8931
+      }
     }
   },
   "by_cwe": {
     "codeguard": {
       "CWE-89": {
-        "tp": 17,
-        "fp": 29,
-        "fn": 8,
-        "precision": 0.3696,
-        "recall": 0.68,
-        "f1": 0.4789
+        "tp": 19,
+        "fp": 27,
+        "fn": 5,
+        "precision": 0.413,
+        "recall": 0.7917,
+        "f1": 0.5429
       },
       "CWE-918": {
         "tp": 4,
@@ -324,10 +413,18 @@
       "CWE-22": {
         "tp": 4,
         "fp": 11,
-        "fn": 4,
+        "fn": 3,
         "precision": 0.2667,
-        "recall": 0.5,
-        "f1": 0.3478
+        "recall": 0.5714,
+        "f1": 0.3636
+      },
+      "CWE-78": {
+        "tp": 5,
+        "fp": 16,
+        "fn": 3,
+        "precision": 0.2381,
+        "recall": 0.625,
+        "f1": 0.3448
       },
       "CWE-330": {
         "tp": 0,
@@ -347,7 +444,7 @@
       },
       "CWE-328": {
         "tp": 0,
-        "fp": 6,
+        "fp": 4,
         "fn": 1,
         "precision": 0.0,
         "recall": 0.0,
@@ -386,12 +483,12 @@
         "f1": 0.0
       },
       "CWE-798": {
-        "tp": 4,
-        "fp": 14,
-        "fn": 6,
-        "precision": 0.2222,
-        "recall": 0.4,
-        "f1": 0.2857
+        "tp": 5,
+        "fp": 13,
+        "fn": 5,
+        "precision": 0.2778,
+        "recall": 0.5,
+        "f1": 0.3571
       },
       "CWE-943": {
         "tp": 1,
@@ -442,12 +539,12 @@
         "f1": 0.0
       },
       "CWE-79": {
-        "tp": 4,
-        "fp": 32,
-        "fn": 6,
-        "precision": 0.1111,
-        "recall": 0.4,
-        "f1": 0.1739
+        "tp": 5,
+        "fp": 31,
+        "fn": 5,
+        "precision": 0.1389,
+        "recall": 0.5,
+        "f1": 0.2174
       },
       "CWE-200": {
         "tp": 0,
@@ -465,14 +562,6 @@
         "recall": 0.0,
         "f1": 0.0
       },
-      "CWE-78": {
-        "tp": 4,
-        "fp": 10,
-        "fn": 3,
-        "precision": 0.2857,
-        "recall": 0.5714,
-        "f1": 0.381
-      },
       "CWE-98": {
         "tp": 1,
         "fp": 2,
@@ -481,13 +570,13 @@
         "recall": 0.5,
         "f1": 0.4
       },
-      "CWE-327": {
-        "tp": 0,
-        "fp": 3,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
+      "CWE-916": {
+        "tp": 1,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333
       },
       "CWE-915": {
         "tp": 0,
@@ -496,6 +585,14 @@
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
+      },
+      "CWE-639": {
+        "tp": 1,
+        "fp": 12,
+        "fn": 2,
+        "precision": 0.0769,
+        "recall": 0.3333,
+        "f1": 0.125
       },
       "CWE-1104": {
         "tp": 0,
@@ -553,10 +650,18 @@
         "recall": 0.0,
         "f1": 0.0
       },
-      "CWE-639": {
+      "CWE-327": {
         "tp": 0,
-        "fp": 3,
-        "fn": 3,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1336": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
@@ -586,14 +691,6 @@
         "f1": 0.0
       },
       "CWE-640": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 1,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
-      },
-      "CWE-916": {
         "tp": 0,
         "fp": 0,
         "fn": 1,
@@ -636,12 +733,12 @@
     },
     "semgrep": {
       "CWE-89": {
-        "tp": 13,
-        "fp": 29,
-        "fn": 12,
-        "precision": 0.3095,
-        "recall": 0.52,
-        "f1": 0.3881
+        "tp": 15,
+        "fp": 27,
+        "fn": 9,
+        "precision": 0.3571,
+        "recall": 0.625,
+        "f1": 0.4545
       },
       "CWE-918": {
         "tp": 5,
@@ -654,10 +751,18 @@
       "CWE-22": {
         "tp": 2,
         "fp": 3,
-        "fn": 6,
+        "fn": 5,
         "precision": 0.4,
-        "recall": 0.25,
-        "f1": 0.3077
+        "recall": 0.2857,
+        "f1": 0.3333
+      },
+      "CWE-78": {
+        "tp": 4,
+        "fp": 13,
+        "fn": 4,
+        "precision": 0.2353,
+        "recall": 0.5,
+        "f1": 0.32
       },
       "CWE-321": {
         "tp": 0,
@@ -756,12 +861,12 @@
         "f1": 0.4444
       },
       "CWE-798": {
-        "tp": 1,
-        "fp": 7,
-        "fn": 9,
-        "precision": 0.125,
-        "recall": 0.1,
-        "f1": 0.1111
+        "tp": 2,
+        "fp": 6,
+        "fn": 8,
+        "precision": 0.25,
+        "recall": 0.2,
+        "f1": 0.2222
       },
       "CWE-732": {
         "tp": 0,
@@ -843,21 +948,13 @@
         "recall": 0.0,
         "f1": 0.0
       },
-      "CWE-78": {
-        "tp": 4,
-        "fp": 6,
-        "fn": 3,
-        "precision": 0.4,
-        "recall": 0.5714,
-        "f1": 0.4706
-      },
       "CWE-79": {
-        "tp": 2,
-        "fp": 36,
-        "fn": 8,
-        "precision": 0.0526,
-        "recall": 0.2,
-        "f1": 0.0833
+        "tp": 3,
+        "fp": 35,
+        "fn": 7,
+        "precision": 0.0789,
+        "recall": 0.3,
+        "f1": 0.125
       },
       "CWE-98": {
         "tp": 0,
@@ -947,6 +1044,14 @@
         "recall": 0.0,
         "f1": 0.0
       },
+      "CWE-1336": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
       "CWE-209": {
         "tp": 0,
         "fp": 0,
@@ -1016,15 +1121,15 @@
       "CWE-89": {
         "tp": 5,
         "fp": 1,
-        "fn": 20,
+        "fn": 19,
         "precision": 0.8333,
-        "recall": 0.2,
-        "f1": 0.3226
+        "recall": 0.2083,
+        "f1": 0.3333
       },
       "CWE-22": {
         "tp": 0,
         "fp": 1,
-        "fn": 8,
+        "fn": 7,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
@@ -1096,10 +1201,10 @@
       "CWE-78": {
         "tp": 3,
         "fp": 7,
-        "fn": 4,
+        "fn": 5,
         "precision": 0.3,
-        "recall": 0.4286,
-        "f1": 0.3529
+        "recall": 0.375,
+        "f1": 0.3333
       },
       "CWE-98": {
         "tp": 0,
@@ -1153,6 +1258,14 @@
         "tp": 0,
         "fp": 0,
         "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1336": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0
@@ -1261,6 +1374,232 @@
         "recall": 0.0,
         "f1": 0.0
       }
+    },
+    "snyk": {
+      "CWE-89": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-22": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-918": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-95": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-943": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-601": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-798": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1333": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-532": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-79": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-78": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-98": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-328": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-327": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-639": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1336": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-209": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-330": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-611": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-434": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-285": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-640": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-916": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-200": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-1104": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-502": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-915": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "CWE-256": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
     }
   },
   "unique_detections": {
@@ -1314,6 +1653,24 @@
         "description": "Hardcoded API secret key \u2014 API_SECRET_KEY assigned a literal string value committed to source code, exposing the signing key"
       },
       {
+        "app": "railsgoat",
+        "gt_id": "RG-003",
+        "cwe": "CWE-78",
+        "description": "Command injection \u2014 system() with unescaped user-supplied filename interpolated into shell"
+      },
+      {
+        "app": "railsgoat",
+        "gt_id": "RG-007",
+        "cwe": "CWE-916",
+        "description": "Plain MD5 password storage \u2014 Digest::MD5.hexdigest used for both write and authenticate paths"
+      },
+      {
+        "app": "railsgoat",
+        "gt_id": "RG-009",
+        "cwe": "CWE-639",
+        "description": "IDOR \u2014 User.find_by(id: params[:user_id]) with no ownership check before update"
+      },
+      {
         "app": "xvwa",
         "gt_id": "XW-002",
         "cwe": "CWE-79",
@@ -1340,6 +1697,7 @@
         "description": "SSRF \u2014 file_get_contents() with user-controlled URL"
       }
     ],
-    "bandit": []
+    "bandit": [],
+    "snyk": []
   }
 }

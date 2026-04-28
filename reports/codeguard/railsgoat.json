@@ -13,15 +13,26 @@
       "line": 28
     },
     {
-      "id": "ruby.rails.security.brakeman.check-unscoped-find.check-unscoped-find",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-ruby",
       "category": "sast",
-      "name": "check-unscoped-find",
-      "message": "Found an unscoped `find(...)` with user-controllable input. If the ActiveRecord model being searched against is sensitive, this may lead to Insecure Direct Object Reference (IDOR) behavior and allow users to read arbitrary records. Scope the find to the current user, e.g. `current_user.accounts.find(params[:id])`.",
-      "cwe": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "name": "idor-find-by-id-no-ownership-ruby",
+      "message": "Possible IDOR: ActiveRecord model fetched by ID from params without ownership scope. Use `current_user.<association>.find(params[:id])` or a Pundit/CanCan policy check.\n",
+      "cwe": "CWE-639",
       "severity": "medium",
       "confidence": "MEDIUM",
       "file": "app/controllers/admin_controller.rb",
       "line": 34
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-ruby",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-ruby",
+      "message": "Possible IDOR: ActiveRecord model fetched by ID from params without ownership scope. Use `current_user.<association>.find(params[:id])` or a Pundit/CanCan policy check.\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/admin_controller.rb",
+      "line": 56
     },
     {
       "id": "ruby.rails.security.brakeman.check-unsafe-reflection.check-unsafe-reflection",
@@ -112,11 +123,11 @@
       "line": 57
     },
     {
-      "id": "ruby.rails.security.brakeman.check-unscoped-find.check-unscoped-find",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-ruby",
       "category": "sast",
-      "name": "check-unscoped-find",
-      "message": "Found an unscoped `find(...)` with user-controllable input. If the ActiveRecord model being searched against is sensitive, this may lead to Insecure Direct Object Reference (IDOR) behavior and allow users to read arbitrary records. Scope the find to the current user, e.g. `current_user.accounts.find(params[:id])`.",
-      "cwe": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "name": "idor-find-by-id-no-ownership-ruby",
+      "message": "Possible IDOR: ActiveRecord model fetched by ID from params without ownership scope. Use `current_user.<association>.find(params[:id])` or a Pundit/CanCan policy check.\n",
+      "cwe": "CWE-639",
       "severity": "medium",
       "confidence": "MEDIUM",
       "file": "app/controllers/pay_controller.rb",
@@ -156,6 +167,17 @@
       "line": 55
     },
     {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.auth.idor-find-by-id-no-ownership-ruby",
+      "category": "sast",
+      "name": "idor-find-by-id-no-ownership-ruby",
+      "message": "Possible IDOR: ActiveRecord model fetched by ID from params without ownership scope. Use `current_user.<association>.find(params[:id])` or a Pundit/CanCan policy check.\n",
+      "cwe": "CWE-639",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "app/controllers/work_info_controller.rb",
+      "line": 4
+    },
+    {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.command-injection-ruby",
       "category": "sast",
       "name": "command-injection-ruby",
@@ -167,24 +189,24 @@
       "line": 15
     },
     {
-      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.weak-password-hash-md5-ruby",
       "category": "sast",
-      "name": "weak-hashes-md5",
-      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
-      "cwe": "CWE-328: Use of Weak Hash",
-      "severity": "medium",
-      "confidence": "MEDIUM",
+      "name": "weak-password-hash-md5-ruby",
+      "message": "Plain MD5/SHA-1 password storage. Use bcrypt (cost \u2265 12), argon2id, or PBKDF2-HMAC-SHA256 with \u2265 100k iterations and a per-password salt.\n",
+      "cwe": "CWE-916",
+      "severity": "high",
+      "confidence": "HIGH",
       "file": "app/models/user.rb",
       "line": 45
     },
     {
-      "id": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.secrets.weak-password-hash-md5-ruby",
       "category": "sast",
-      "name": "weak-hashes-md5",
-      "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
-      "cwe": "CWE-328: Use of Weak Hash",
-      "severity": "medium",
-      "confidence": "MEDIUM",
+      "name": "weak-password-hash-md5-ruby",
+      "message": "Plain MD5/SHA-1 password storage. Use bcrypt (cost \u2265 12), argon2id, or PBKDF2-HMAC-SHA256 with \u2265 100k iterations and a per-password salt.\n",
+      "cwe": "CWE-916",
+      "severity": "high",
+      "confidence": "HIGH",
       "file": "app/models/user.rb",
       "line": 55
     },

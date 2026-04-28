@@ -2,6 +2,17 @@
   "version": "3.0.0",
   "vulnerabilities": [
     {
+      "id": "yaml.github-actions.security.run-shell-injection.run-shell-injection",
+      "category": "sast",
+      "name": "run-shell-injection",
+      "message": "Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: \"$ENVVAR\".",
+      "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": ".github/workflows/release.yml",
+      "line": 24
+    },
+    {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.traversal.new-file-param-java",
       "category": "sast",
       "name": "new-file-param-java",

@@ -424,9 +424,15 @@ Code:
 
 Respond with ONLY valid JSON: {{"verdict":"tp" or "fp","confidence":1-100,"reason":"one sentence"}}
 
+Decision rules:
 - If user input reaches a dangerous sink without sanitization → tp
-- If input is sanitized, parameterized, or from a trusted source → fp
-- If code is in a test/example/vendor file → fp
+- If the path contains "lessons/", "challenge", "vulnerable", "vuln", "goat",
+  "dvwa", "xvwa", "broken", "insecur", or "owasp" → the code is intentionally
+  vulnerable teaching material; treat the vulnerability as REAL → tp
+- If input is sanitized, parameterized (?-placeholder, prepared statement,
+  bind variables) or from a trusted source (env var, hardcoded literal) → fp
+- If the path contains "test/", "tests/", "spec/", "__tests__/", "fixtures/",
+  "node_modules/", "vendor/" — and is NOT a teaching path per above — → fp
 - When unsure, say tp"""
 
 _AI_REVIEW_PROMPT = """\
