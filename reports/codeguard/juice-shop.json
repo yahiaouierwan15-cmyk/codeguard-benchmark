@@ -79,6 +79,72 @@
       "line": 11
     },
     {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-multi-update-tainted",
+      "category": "sast",
+      "name": "nosql-injection-mongo-multi-update-tainted",
+      "message": "Mongo `update(..., { multi: true })` modifies many documents in one call \u2014 combined with a tainted query this allows mass tampering or forgery (e.g. updating every other user's records). Prefer `updateOne` or wrap with an explicit ownership filter.\n",
+      "cwe": "CWE-943",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "data/static/codefixes/forgedReviewChallenge_1.ts",
+      "line": 4
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-multi-update-tainted",
+      "category": "sast",
+      "name": "nosql-injection-mongo-multi-update-tainted",
+      "message": "Mongo `update(..., { multi: true })` modifies many documents in one call \u2014 combined with a tainted query this allows mass tampering or forgery (e.g. updating every other user's records). Prefer `updateOne` or wrap with an explicit ownership filter.\n",
+      "cwe": "CWE-943",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "data/static/codefixes/forgedReviewChallenge_2_correct.ts",
+      "line": 4
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-req-body-id",
+      "category": "sast",
+      "name": "nosql-injection-mongo-req-body-id",
+      "message": "NoSQL injection: Mongo query uses _id from req.body without validation. An attacker can pass a query operator object (e.g. `{ \"$ne\": null }`) instead of a string ID and match-all / escape ownership. Cast to string and validate (`new ObjectId(String(req.body.id))`).\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/forgedReviewChallenge_3.ts",
+      "line": 4
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-req-body-id",
+      "category": "sast",
+      "name": "nosql-injection-mongo-req-body-id",
+      "message": "NoSQL injection: Mongo query uses _id from req.body without validation. An attacker can pass a query operator object (e.g. `{ \"$ne\": null }`) instead of a string ID and match-all / escape ownership. Cast to string and validate (`new ObjectId(String(req.body.id))`).\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/noSqlReviewsChallenge_1.ts",
+      "line": 10
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-req-body-id",
+      "category": "sast",
+      "name": "nosql-injection-mongo-req-body-id",
+      "message": "NoSQL injection: Mongo query uses _id from req.body without validation. An attacker can pass a query operator object (e.g. `{ \"$ne\": null }`) instead of a string ID and match-all / escape ownership. Cast to string and validate (`new ObjectId(String(req.body.id))`).\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/noSqlReviewsChallenge_2.ts",
+      "line": 4
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-req-body-id",
+      "category": "sast",
+      "name": "nosql-injection-mongo-req-body-id",
+      "message": "NoSQL injection: Mongo query uses _id from req.body without validation. An attacker can pass a query operator object (e.g. `{ \"$ne\": null }`) instead of a string ID and match-all / escape ownership. Cast to string and validate (`new ObjectId(String(req.body.id))`).\n",
+      "cwe": "CWE-943",
+      "severity": "high",
+      "confidence": "HIGH",
+      "file": "data/static/codefixes/noSqlReviewsChallenge_3_correct.ts",
+      "line": 10
+    },
+    {
       "id": "javascript.audit.detect-replaceall-sanitization.detect-replaceall-sanitization",
       "category": "sast",
       "name": "detect-replaceall-sanitization",
@@ -431,15 +497,26 @@
       "line": 36
     },
     {
-      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.mongodb-where-template-literal",
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-where-operator-injection",
       "category": "sast",
-      "name": "mongodb-where-template-literal",
-      "message": "MongoDB $where clause uses a template literal \u2014 any interpolated variable enables arbitrary JavaScript injection into the MongoDB query engine. Replace $where with typed query operators ($eq, $gt, $lt) and validate inputs.\n",
+      "name": "nosql-where-operator-injection",
+      "message": "Mongo $where operator evaluates JavaScript server-side and is RCE-prone when fed user input. Avoid; use indexed query operators.\n",
       "cwe": "CWE-943",
       "severity": "high",
       "confidence": "HIGH",
       "file": "routes/trackOrder.ts",
       "line": 18
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.nosql-injection-mongo-multi-update-tainted",
+      "category": "sast",
+      "name": "nosql-injection-mongo-multi-update-tainted",
+      "message": "Mongo `update(..., { multi: true })` modifies many documents in one call \u2014 combined with a tainted query this allows mass tampering or forgery (e.g. updating every other user's records). Prefer `updateOne` or wrap with an explicit ownership filter.\n",
+      "cwe": "CWE-943",
+      "severity": "medium",
+      "confidence": "MEDIUM",
+      "file": "routes/updateProductReviews.ts",
+      "line": 17
     },
     {
       "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.codeguard.injection.eval-dynamic-string-js",
@@ -550,6 +627,28 @@
       "confidence": "MEDIUM",
       "file": "server.ts",
       "line": 281
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.multer-no-file-filter",
+      "category": "sast",
+      "name": "multer-no-file-filter",
+      "message": "multer() configured without `fileFilter` and/or `limits`. Reject unexpected MIME types and cap size to mitigate upload-driven RCE and resource exhaustion.\n",
+      "cwe": "CWE-434",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "server.ts",
+      "line": 681
+    },
+    {
+      "id": "Users.erwanyahiaoui.Desktop.Projet.CodeGuard.codeguard-worker.rules.injections.multer-no-file-filter",
+      "category": "sast",
+      "name": "multer-no-file-filter",
+      "message": "multer() configured without `fileFilter` and/or `limits`. Reject unexpected MIME types and cap size to mitigate upload-driven RCE and resource exhaustion.\n",
+      "cwe": "CWE-434",
+      "severity": "medium",
+      "confidence": "LOW",
+      "file": "server.ts",
+      "line": 687
     },
     {
       "id": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",

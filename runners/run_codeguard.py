@@ -383,15 +383,23 @@ _CONFIDENCE_RANK = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
 
 def _finding_priority(f: dict) -> tuple:
     """Higher = better. Used to pick the winning finding when multiple
-    rules fire on the same code location. Sort key = (severity, confidence).
+    rules fire on the same code location.
+
+    Sort key = (codeguard_rule, severity, confidence). The first dimension
+    favors our targeted rules over Semgrep auto-config when both fire at
+    the same location: our rules tend to label CWEs more specifically
+    (CWE-78 vs CWE-94 for `shell_exec($_GET[...])`) which matters for
+    GT matching.
     """
+    rule_id = f.get("id", "")
+    is_codeguard = 1 if ("codeguard-worker/rules" in rule_id or rule_id.startswith("codeguard.")) else 0
     sev = _SEVERITY_RANK.get(str(f.get("severity", "medium")).lower(), 2)
     conf_raw = f.get("confidence", "MEDIUM")
     if isinstance(conf_raw, (int, float)):
         conf = 3 if conf_raw >= 80 else 2 if conf_raw >= 50 else 1
     else:
         conf = _CONFIDENCE_RANK.get(str(conf_raw).upper(), 2)
-    return (sev, conf)
+    return (is_codeguard, sev, conf)
 
 
 def dedup_findings(findings: list) -> list:

@@ -92,10 +92,13 @@ CWE_SIBLINGS = {
     frozenset(["CWE-22", "CWE-98"]),     # Path traversal vs PHP file inclusion (same root)
     frozenset(["CWE-79", "CWE-80"]),     # XSS vs basic XSS
     frozenset(["CWE-89", "CWE-564"]),    # SQLi vs Hibernate query injection
-    frozenset(["CWE-78", "CWE-77"]),     # Already in parents but make explicit
+    frozenset(["CWE-78", "CWE-77"]),     # OS cmd inj ↔ general cmd inj
+    frozenset(["CWE-78", "CWE-94"]),     # OS cmd inj ↔ code injection (shell_exec ambiguity)
     frozenset(["CWE-94", "CWE-95"]),     # Code injection vs eval injection
     frozenset(["CWE-918", "CWE-441"]),   # SSRF and proxy
     frozenset(["CWE-639", "CWE-285"]),   # IDOR vs improper authorization
+    frozenset(["CWE-915", "CWE-639"]),   # Mass assignment ↔ IDOR (often co-occur)
+    frozenset(["CWE-256", "CWE-916"]),   # Plaintext password ↔ weak password hash
 }
 
 # ---------------------------------------------------------------------------
